@@ -1,91 +1,26 @@
-# Getting Started with Create React App
+# Mailsbe
 
-This project was bootstrapped with
-[Create React App](https://github.com/facebook/create-react-app).
+**Suppose**, you have applied for a job through an email. You have sent the email two days ago but you haven't gotten any response. And you don't know if the employer read your email or not. Well no need to worry now because I have a solution for that, **introducing Mailsbe**.
 
-## Available Scripts
+## Introduction
 
-In the project directory, you can run:
+**Mailsbe** is an MIT Licensed open source project and a platform with the help of which you can find out if the Email sent by you has **been read or not**. It is a simple platform that has been designed by keeping the **user's privacy **in mind. We don't ask for full email read/write access. Instead, we provide a simple way to find the status if your email **respecting your privacy**.
 
-### `npm start`
+## Tech stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+It doesn't involve a very much complicated tech stack. Instead, it uses only a few technologies like React and Nhost.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **React** -> For frontend part
+- **Nhost** -> For user authentication, database, hosting and serverless function
 
-### `npm test`
+> If you don't know about Nhost then simply put it as a firebase alternative. Even officially, Nhost is called an open-source Firebase alternative with GraphQL.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests)
-for more information.
+## Process
 
-### `npm run build`
+I am not going to explain all of the technical jargon here, instead, I will take you through the working process of the project.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best
-performance.
+First of all, you need to create an account. Then only you can access your dashboard. Inside of your dashboard, you will see the list of emails you have sent and complete detail about them. If you haven't sent any emails then you can send one by clicking on compose button on the top left side of the page.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+No, you can't send emails from here. Instead, you will be provided an image (1x1 transparent pixel) which you can copy and paste to the email client from where you are sending the email. Then fill out some more information about the email (it will make it easy to find the email in the future) and click save.
 
-See the section about
-[deployment](https://facebook.github.io/create-react-app/docs/deployment) for
-more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can
-`eject` at any time. This command will remove the single build dependency from
-your project.
-
-Instead, it will copy all the configuration files and the transitive
-dependencies (webpack, Babel, ESLint, etc) right into your project so you have
-full control over them. All of the commands except `eject` will still work, but
-they will point to the copied scripts so you can tweak them. At this point
-you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for
-small and middle deployments, and you shouldn't feel obligated to use this
-feature. However we understand that this tool wouldn't be useful if you couldn't
-customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the
-[Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here:
-[https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here:
-[https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here:
-[https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here:
-[https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here:
-[https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here:
-[https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+After you sent your email, you can now access the status of the email on the dashboard. The status is either _seen_ or _unseen_. The status will be updated when the receiver opens up the email you sent. And the serverless function helps to do that by accepting the receiver's request and updating it on the database.
