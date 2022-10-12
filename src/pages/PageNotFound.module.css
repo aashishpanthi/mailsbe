@@ -1,0 +1,126 @@
+.illustrationIcon {
+  position: relative;
+  width: 182.93px;
+  height: 118.15px;
+  flex-shrink: 0;
+}
+.icons,
+.textDiv {
+  position: relative;
+}
+.icons {
+  width: 12px;
+  height: 12px;
+  flex-shrink: 0;
+}
+.textDiv {
+  font-weight: 600;
+  display: inline-block;
+}
+.badgeDiv {
+  border-radius: var(--br-2xs);
+  background-color: var(--error-red-50);
+  display: flex;
+  flex-direction: row;
+  padding: var(--padding-3xs) var(--padding-xs);
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-xs);
+}
+.titleDiv {
+  align-self: stretch;
+  position: relative;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--neutral-800);
+  text-align: center;
+  display: inline-block;
+}
+.headingDiv {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-xs);
+}
+.paragraphDiv {
+  align-self: stretch;
+  position: relative;
+  font-size: var(--bold-16px1-size);
+  color: var(--neutral-500);
+  text-align: center;
+  display: inline-block;
+}
+.contentDiv {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-lg);
+}
+.labelDiv {
+  position: absolute;
+  top: calc(50% - 10px);
+  left: calc(50% - 81.5px);
+  font-size: var(--bold-16px1-size);
+  line-height: 20px;
+  font-weight: 600;
+  font-family: var(--font-manrope);
+  color: var(--shades-white);
+  text-align: center;
+  display: inline-block;
+}
+.cTAButton {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: var(--neutral-800);
+  position: relative;
+  border-radius: var(--br-2xs);
+  width: 227px;
+  height: 40px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+.containerDiv {
+  align-self: stretch;
+  height: 177px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap-xl);
+}
+.errorDiv,
+.pageNotFound {
+  background-color: var(--shades-white);
+}
+.errorDiv {
+  position: absolute;
+  top: 70px;
+  left: 246px;
+  border-radius: var(--br-2xs);
+  width: 528px;
+  height: 609px;
+  display: flex;
+  flex-direction: column;
+  padding: 80px 32px;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-xl);
+}
+.pageNotFound {
+  position: relative;
+  width: 100%;
+  height: 698px;
+  overflow: hidden;
+  text-align: left;
+  font-size: 10px;
+  color: var(--error-red-800);
+  font-family: var(--font-manrope);
+}

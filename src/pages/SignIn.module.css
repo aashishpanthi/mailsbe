@@ -1,0 +1,265 @@
+.bGDiv {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-sm);
+  background-color: var(--blue-gray-900);
+  width: 557px;
+  height: 799px;
+}
+.fIllInTheRequiredDetailsT,
+.welcomeBack {
+  position: absolute;
+  left: 0;
+  display: inline-block;
+}
+.welcomeBack {
+  top: 0;
+  letter-spacing: -2px;
+  line-height: 62px;
+  font-weight: 600;
+}
+.fIllInTheRequiredDetailsT {
+  top: 81px;
+  font-size: var(--pj-regular-18px-size);
+  line-height: 30px;
+  color: var(--color-gray-800);
+  width: 449px;
+}
+.buttonNameDiv {
+  position: relative;
+  letter-spacing: -0.2px;
+  line-height: 28px;
+  font-weight: 600;
+  display: inline-block;
+}
+.iconOutlinearrowRight {
+  position: relative;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+.iconDiv {
+  display: none;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.buttonPrimaryWithIconDiv,
+.frameDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.frameDiv {
+  flex-direction: row;
+  gap: var(--gap-sm);
+}
+.buttonPrimaryWithIconDiv {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-lg);
+  background-color: var(--blue-gray-800);
+  width: 444px;
+  flex-direction: column;
+  padding: var(--padding-md);
+  box-sizing: border-box;
+}
+.buttonDiv,
+.google2Icon {
+  position: absolute;
+  top: 19px;
+  left: 106.7px;
+  width: 23px;
+  height: 23px;
+}
+.buttonDiv {
+  top: 181px;
+  left: 0;
+  width: 444px;
+  height: 60px;
+  text-align: right;
+  font-size: var(--bold-16px1-size);
+}
+.titleDiv {
+  position: absolute;
+  top: 42px;
+  left: 62px;
+  width: 449px;
+  height: 241px;
+}
+.inputLabelDiv {
+  position: relative;
+  font-size: var(--regular-13px1-size);
+  line-height: 22px;
+  font-family: var(--bold-52px);
+  color: var(--gray-200);
+  text-align: left;
+  display: inline-block;
+}
+.frameInput {
+  border: 1px solid var(--blue-gray-700);
+  background-color: transparent;
+  align-self: stretch;
+  border-radius: var(--br-lg);
+  box-sizing: border-box;
+  position: relative;
+  height: 60px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: row;
+  padding: var(--padding-lg) var(--padding-xl);
+  align-items: center;
+  justify-content: flex-start;
+}
+.inputTextStyle3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 449px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: var(--gap-md);
+}
+.frameInput1,
+.inputTextStyle3,
+.inputTextStyle4 {
+  border-radius: var(--br-lg);
+  display: flex;
+}
+.frameInput1 {
+  border: 1px solid var(--blue-gray-700);
+  background-color: transparent;
+  align-self: stretch;
+  box-sizing: border-box;
+  position: relative;
+  height: 60px;
+  flex-shrink: 0;
+  flex-direction: row;
+  padding: var(--padding-3xl) var(--padding-xl) var(--padding-lg);
+  align-items: center;
+  justify-content: flex-start;
+  mix-blend-mode: normal;
+}
+.inputTextStyle4 {
+  position: absolute;
+  top: 116px;
+  left: 0;
+  width: 449px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: var(--gap-md);
+}
+.rememberMeDiv {
+  position: absolute;
+  top: 0;
+  left: 28px;
+  font-size: var(--regular-13px1-size);
+  line-height: 22px;
+  font-family: var(--bold-52px);
+  color: var(--shades-white);
+  text-align: left;
+  display: inline-block;
+}
+.checkDiv,
+.shapeInput {
+  position: absolute;
+  left: 0;
+}
+.shapeInput {
+  cursor: pointer;
+  top: 2px;
+  border-radius: var(--br-xs);
+  border: 1px solid var(--blue-gray-700);
+  box-sizing: border-box;
+  width: 19px;
+  height: 19px;
+}
+.checkDiv {
+  top: 232px;
+  width: 133px;
+  height: 22px;
+}
+.buttonNameDiv1 {
+  position: relative;
+  font-size: var(--bold-16px1-size);
+  letter-spacing: -0.2px;
+  line-height: 28px;
+  font-weight: 600;
+  font-family: var(--bold-52px);
+  color: var(--shades-white);
+  text-align: center;
+  display: inline-block;
+}
+.buttonPrimaryWithIcon {
+  cursor: pointer;
+  border: 0;
+  padding: var(--padding-md);
+  background-color: var(--blue-600);
+  position: absolute;
+  top: 284px;
+  left: 0;
+  border-radius: var(--br-xl);
+  width: 201px;
+  height: 55px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+}
+.createFreeAccount,
+.dontHaveAn {
+  font-family: var(--bold-52px);
+  color: var(--neutral-500);
+}
+.createFreeAccount {
+  font-weight: 600;
+  color: var(--blue-600);
+}
+.dontHaveAnContainer {
+  line-break: anywhere;
+  width: 100%;
+}
+.dontHaveAnAccountCreate {
+  cursor: pointer;
+  text-decoration: none;
+  position: absolute;
+  top: 359px;
+  left: 0;
+  font-size: var(--regular-13px1-size);
+  line-height: 22px;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  width: 444px;
+}
+.formDiv,
+.inputContentForm {
+  position: absolute;
+  top: 356px;
+  left: 62px;
+  width: 449px;
+  height: 381px;
+}
+.formDiv {
+  top: 134px;
+  left: 521px;
+  width: 557px;
+  height: 799px;
+}
+.signInDiv {
+  position: relative;
+  background-color: var(--shades-white);
+  width: 100%;
+  height: 1067px;
+  overflow: hidden;
+  text-align: left;
+  font-size: var(--pj-bold-52px-size);
+  color: var(--shades-white);
+  font-family: var(--bold-52px);
+}

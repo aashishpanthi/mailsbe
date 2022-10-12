@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap");
+body {
+  margin: 0;
+  line-height: normal;
+}
+:root {
+  /* fonts */
+  --font-manrope: Manrope;
+  --inter-regular-18px: Inter;
+  --bold-52px: Poppins;
+  --regular-13px1: "Plus Jakarta Sans";
+
+  /* font sizes */
+  --text-xs-medium-size: 12px;
+  --regular-13px1-size: 14px;
+  --bold-16px1-size: 16px;
+  --pj-regular-18px-size: 18px;
+  --pj-bold-21px-size: 21px;
+  --bold-32px-size: 32px;
+  --pj-bold-42px-size: 42px;
+  --pj-bold-52px-size: 52px;
+
+  /* Colors */
+  --shades-white: #fff;
+  --gray-50: #f9fafb;
+  --success-50: #ecfdf3;
+  --gray-100: #f2f4f7;
+  --color-gray-400: #eaecf0;
+  --gray-200: #e4e4e7;
+  --neutral-200: #d0d5dd;
+  --gray-400: #a1a1aa;
+  --color-gray-800: #94a3b8;
+  --neutral-500: #64748b;
+  --gray-500: #667085;
+  --gray-600: #52525b;
+  --blue-gray-700: #334155;
+  --gray-700: #344054;
+  --blue-gray-800: #1e293b;
+  --color-gray-1500: #27272a;
+  --neutral-800: #191d23;
+  --gray-900: #18181b;
+  --gray-900: #101828;
+  --blue-gray-900: #0f172a;
+  --success-green-700: #047857;
+  --success-700: #027a48;
+  --blue-600: #2563eb;
+  --base-black: #000;
+
+  /* Gaps */
+  --gap-2xs: 4px;
+  --gap-xs: 8px;
+  --gap-sm: 9px;
+  --gap-md: 10px;
+  --gap-lg: 16px;
+  --gap-xl: 24px;
+
+  /* Paddings */
+  --padding-3xs: 2px;
+  --padding-2xs: 8px;
+  --padding-xs: 10px;
+  --padding-sm: 12px;
+  --padding-md: 16px;
+  --padding-lg: 17px;
+  --padding-xl: 22px;
+  --padding-2xl: 24px;
+  --padding-3xl: 26px;
+
+  /* border radiuses */
+  --br-2xs: 4px;
+  --br-xs: 5px;
+  --br-sm: 10px;
+  --br-md: 16px;
+  --br-lg: 35px;
+  --br-xl: 50px;
+
+  /* Effects */
+  --shadow-md: 0px 4px 8px -2px rgba(16, 24, 40, 0.1),
+    0px 2px 4px -2px rgba(16, 24, 40, 0.06);
+}

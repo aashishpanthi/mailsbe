@@ -1,0 +1,616 @@
+.bGDiv {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--color);
+  width: 1599px;
+  height: 576px;
+}
+.hELPMENUB,
+.weAreHereToHelpYouSuceed {
+  position: absolute;
+  left: 0;
+  display: inline-block;
+}
+.weAreHereToHelpYouSuceed {
+  top: 54px;
+  line-height: 22px;
+  width: 396px;
+  height: 98px;
+}
+.hELPMENUB {
+  top: 0;
+  font-size: var(--bold-16px1-size);
+  line-height: 24px;
+  color: var(--gray-900);
+}
+.a,
+.logoTwitter2Icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 16px;
+  height: 12.87px;
+}
+.a {
+  text-decoration: none;
+  top: 3.86px;
+}
+.a1,
+.logoFbSimple2Icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 9.05px;
+  height: 17.35px;
+}
+.a1 {
+  text-decoration: none;
+  top: 1.29px;
+  left: 50.34px;
+}
+.a2,
+.logoInstagram1Icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 19.4px;
+  height: 19.31px;
+}
+.a2 {
+  text-decoration: none;
+  left: 93.73px;
+}
+.a3,
+.logoGithub1Icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 18.56px;
+  height: 18.02px;
+}
+.a3 {
+  text-decoration: none;
+  left: 147.46px;
+}
+.socialDiv,
+.widget0Div {
+  position: absolute;
+  top: 181px;
+  left: 1px;
+  width: 166.02px;
+  height: 19.31px;
+}
+.widget0Div {
+  top: 277px;
+  left: 151px;
+  width: 396px;
+  height: 200.31px;
+  color: var(--gray-600);
+}
+.career {
+  position: absolute;
+  top: 165px;
+  left: 0;
+  display: inline-block;
+}
+.career,
+.features,
+.worksA {
+  text-decoration: none;
+  line-height: 40px;
+  color: inherit;
+}
+.worksA {
+  position: absolute;
+  top: 125px;
+  left: 0;
+  display: inline-block;
+}
+.features {
+  top: 85px;
+}
+.about,
+.features,
+.hELPMENUB1 {
+  position: absolute;
+  left: 0;
+  display: inline-block;
+}
+.about {
+  text-decoration: none;
+  top: 45px;
+  line-height: 40px;
+  color: inherit;
+}
+.hELPMENUB1 {
+  top: 0;
+  font-size: var(--bold-16px1-size);
+  line-height: 24px;
+}
+.widget1Div {
+  position: absolute;
+  top: 277px;
+  left: 1154px;
+  width: 77px;
+  height: 205px;
+}
+.customerSupport,
+.serviceDetails {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+.serviceDetails {
+  color: var(--gray-900);
+}
+.privacyPolicy {
+  margin: 0;
+}
+.aboutFeaturesWorks {
+  position: absolute;
+  top: 45px;
+  left: 0;
+  line-height: 40px;
+  white-space: pre-wrap;
+  display: inline-block;
+}
+.widget2Div {
+  position: absolute;
+  top: 277px;
+  left: 1310px;
+  width: 128px;
+  height: 205px;
+  color: var(--color-gray-1500);
+}
+.pricingPlans {
+  position: absolute;
+  top: 0;
+  left: 0;
+  line-height: 42px;
+  display: inline-block;
+  width: 405px;
+}
+.buttonName {
+  position: relative;
+  font-size: var(--regular-13px1-size);
+  line-height: 22px;
+  display: inline-block;
+  font-family: var(--regular-13px1);
+  color: var(--shades-white);
+  text-align: right;
+}
+.iconOutlinearrowRight {
+  position: relative;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+.iconDiv {
+  display: none;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.buttonPrimaryWithIcon,
+.frameDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.frameDiv {
+  flex-direction: row;
+  gap: var(--gap-sm);
+}
+.buttonPrimaryWithIcon {
+  cursor: pointer;
+  border: 1.5px solid var(--gray-900);
+  padding: var(--padding-md);
+  background-color: var(--gray-900);
+  position: absolute;
+  top: 26px;
+  left: 1084px;
+  border-radius: 60px;
+  box-sizing: border-box;
+  width: 213px;
+  height: 50px;
+  flex-direction: column;
+}
+.contentDiv,
+.lineDiv {
+  position: absolute;
+  width: 1297px;
+}
+.contentDiv {
+  top: 81px;
+  left: 151px;
+  height: 84px;
+  font-size: var(--bold-32px-size);
+}
+.lineDiv {
+  top: 220.5px;
+  left: 151.5px;
+  border-top: 1px solid var(--gray-200);
+  box-sizing: border-box;
+  height: 1px;
+}
+.footer {
+  position: absolute;
+  top: 1874px;
+  left: 0;
+  width: 1599px;
+  height: 576px;
+  text-align: left;
+  font-size: var(--regular-13px1-size);
+  color: var(--gray-900);
+  font-family: var(--regular-13px1);
+}
+.sendB,
+.sendEmailDirectlyFromTheD {
+  position: absolute;
+  top: 99px;
+  left: 0;
+  line-height: 28px;
+  display: inline-block;
+  width: 315px;
+}
+.sendEmailDirectlyFromTheD {
+  top: 143px;
+  left: 16px;
+  font-size: var(--bold-16px1-size);
+  line-height: 26px;
+  color: var(--gray-600);
+  width: 283px;
+}
+.div,
+.sendIcon {
+  position: absolute;
+  top: 0;
+}
+.sendIcon {
+  left: 127px;
+  width: 63px;
+  height: 63px;
+  object-fit: cover;
+}
+.div {
+  left: 0;
+  width: 315px;
+  height: 195px;
+}
+.knowIfTheUserReadTheEmai,
+.statusB {
+  position: absolute;
+  top: 91px;
+  left: 0;
+  line-height: 28px;
+  display: inline-block;
+  width: 315px;
+}
+.knowIfTheUserReadTheEmai {
+  top: 141px;
+  left: 42px;
+  font-size: var(--bold-16px1-size);
+  line-height: 26px;
+  color: var(--gray-600);
+  width: 240px;
+}
+.vectorIcon {
+  position: absolute;
+  height: 24.8%;
+  width: 14.6%;
+  top: 0;
+  right: 42.54%;
+  bottom: 75.2%;
+  left: 42.86%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.div1 {
+  position: absolute;
+  top: 8px;
+  left: 338px;
+  width: 315px;
+  height: 193px;
+}
+.findOutExactlyWhenTheRece,
+.historyB {
+  position: absolute;
+  top: 85px;
+  left: 0;
+  line-height: 28px;
+  display: inline-block;
+  width: 315px;
+}
+.findOutExactlyWhenTheRece {
+  top: 135px;
+  left: 13px;
+  font-size: var(--bold-16px1-size);
+  line-height: 26px;
+  color: var(--gray-600);
+  width: 290px;
+}
+.vectorIcon1 {
+  position: absolute;
+  height: 19.47%;
+  width: 13.02%;
+  top: 0;
+  right: 42.86%;
+  bottom: 80.53%;
+  left: 44.13%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.div2 {
+  position: absolute;
+  top: 14px;
+  left: 681px;
+  width: 315px;
+  height: 187px;
+}
+.linesIcon,
+.listDiv {
+  position: absolute;
+  top: 0;
+  left: 330px;
+  width: 337px;
+  height: 287px;
+}
+.listDiv {
+  top: 198px;
+  left: 0;
+  width: 996px;
+}
+.exploreTheUnexploredPotenti,
+.useEmailLikeAGeek {
+  position: absolute;
+  top: 0;
+  left: 0;
+  line-height: 48px;
+  display: inline-block;
+  width: 616px;
+}
+.exploreTheUnexploredPotenti {
+  top: 75px;
+  left: 48px;
+  font-size: var(--pj-regular-18px-size);
+  line-height: 28px;
+  color: var(--gray-600);
+  width: 521px;
+}
+.contentDiv1 {
+  position: absolute;
+  top: 0;
+  left: 187px;
+  width: 616px;
+  height: 103px;
+  font-size: var(--pj-bold-42px-size);
+}
+.featureDiv {
+  position: absolute;
+  top: 1293px;
+  left: 300px;
+  width: 996px;
+  height: 485px;
+}
+.bGIframe,
+.videoNav {
+  position: absolute;
+  width: 880px;
+  height: 526px;
+}
+.bGIframe {
+  top: 0;
+  left: 0;
+  border-radius: var(--br-sm);
+  background-color: var(--shades-white);
+  box-shadow: 0 24px 164px -20px rgba(35, 40, 105, 0.15);
+}
+.videoNav {
+  top: 570px;
+  left: 361px;
+}
+.knowIfYourEmailHasBeenRe {
+  position: absolute;
+  top: 48px;
+  left: 0;
+  line-height: 62px;
+  font-weight: 800;
+  font-family: var(--regular-13px1);
+  display: inline-block;
+  width: 627px;
+}
+.createYourAccountForFree,
+.smartEmailStatusFinderMa {
+  position: absolute;
+  top: 0;
+  left: 47px;
+  font-size: var(--pj-regular-18px-size);
+  line-height: 28px;
+  color: var(--gray-600);
+  display: inline-block;
+  width: 533px;
+}
+.createYourAccountForFree {
+  top: 298px;
+  font-size: var(--bold-16px1-size);
+  line-height: 26px;
+  color: var(--gray-5001);
+}
+.buttonName1 {
+  position: relative;
+  font-size: var(--pj-regular-18px-size);
+  line-height: 24px;
+  display: inline-block;
+  font-family: var(--regular-13px1);
+  color: var(--shades-white);
+  text-align: right;
+}
+.buttonPrimaryWithIcon1,
+.iconDiv2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.buttonPrimaryWithIcon1 {
+  cursor: pointer;
+  border: 0;
+  padding: var(--padding-md);
+  background-color: var(--base-black);
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-sm);
+  width: 222px;
+  height: 56px;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+.iconDiv2 {
+  flex-direction: row;
+}
+.buttonName2 {
+  position: relative;
+  font-size: var(--pj-regular-18px-size);
+  line-height: 24px;
+  display: inline-block;
+  font-family: var(--regular-13px1);
+  color: var(--gray-900);
+  text-align: right;
+}
+.buttonPrimaryWithIconLeft,
+.frameDiv2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.frameDiv2 {
+  flex-direction: row;
+  gap: var(--gap-md);
+}
+.buttonPrimaryWithIconLeft {
+  cursor: pointer;
+  border: 2px solid var(--gray-400);
+  padding: var(--padding-md);
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  left: 241px;
+  border-radius: var(--br-sm);
+  box-sizing: border-box;
+  width: 246px;
+  height: 56px;
+  flex-direction: column;
+}
+.buttonsDiv,
+.contentDiv2 {
+  position: absolute;
+  top: 208px;
+  left: 83px;
+  width: 487px;
+  height: 56px;
+}
+.contentDiv2 {
+  top: 125px;
+  left: 454px;
+  width: 627px;
+  height: 324px;
+}
+.mailbes {
+  top: 0;
+  font-size: var(--bold-16px1-size);
+  letter-spacing: 3px;
+  line-height: 30px;
+  text-transform: uppercase;
+  display: inline-block;
+  font-family: var(--regular-13px1);
+  color: var(--gray-900);
+  text-align: left;
+}
+.loginButton,
+.logoA,
+.mailbes {
+  position: absolute;
+  left: 0;
+}
+.logoA {
+  text-decoration: none;
+  top: 7px;
+  width: 88px;
+  height: 30px;
+}
+.loginButton {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  top: 0;
+  font-size: var(--bold-16px1-size);
+  line-height: 24px;
+  font-weight: 500;
+  font-family: var(--regular-13px1);
+  color: var(--gray-900);
+  text-align: right;
+  display: inline-block;
+}
+.menuDiv {
+  position: absolute;
+  top: 10px;
+  left: 1343px;
+  width: 43px;
+  height: 24px;
+}
+.buttonName3 {
+  position: relative;
+  font-size: var(--bold-16px1-size);
+  line-height: 28px;
+  display: inline-block;
+  font-family: var(--regular-13px1);
+  color: var(--shades-white);
+  text-align: right;
+}
+.buttonPrimaryWithIcon2 {
+  cursor: pointer;
+  border: 0;
+  padding: var(--padding-md);
+  background-color: var(--base-black);
+  position: absolute;
+  top: 0;
+  left: 1430px;
+  border-radius: var(--br-sm);
+  width: 114px;
+  height: 45px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+}
+.headerNav,
+.heroDiv {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1544px;
+  height: 45px;
+}
+.heroDiv {
+  top: 19px;
+  left: 32px;
+  height: 449px;
+  font-size: var(--pj-bold-52px-size);
+  font-family: var(--inter-regular-18px);
+}
+.homeDiv {
+  position: relative;
+  background-color: #fafafa;
+  width: 100%;
+  height: 2450px;
+  overflow: hidden;
+  text-align: center;
+  font-size: var(--pj-bold-21px-size);
+  color: var(--gray-900);
+  font-family: var(--regular-13px1);
+}
