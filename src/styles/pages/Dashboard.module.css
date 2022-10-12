@@ -1,0 +1,25 @@
+.title {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: 600;
+}
+
+.welcome-text {
+  margin-top: 0.5rem;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.info-text {
+  margin-top: 1rem;
+  color: rgb(107, 114, 128);
+}
+.info-text > code {
+  color: rgb(59, 130, 246);
+  background-color: rgb(219, 234, 254);
+  border-radius: 0.25rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
