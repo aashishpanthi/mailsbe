@@ -5,7 +5,6 @@ const SignUp = () => {
   return (
     <div className={styles.signUpDiv}>
       <div className={styles.formDiv}>
-        <div className={styles.bGDiv} />
         <div className={styles.titleDiv}>
           <div className={styles.joinUsToday}>Join us today 👋</div>
           <div className={styles.createAnAccountToStartUsi}>
@@ -33,7 +32,16 @@ const SignUp = () => {
           method="post"
           id="sign-up-form"
         >
-          <div className={styles.inputTextStyle3}>
+          <div className={styles.inputBox}>
+            <div className={styles.inputLabelDiv}>First & Last name</div>
+            <input
+              className={styles.frameInput}
+              type="text"
+              placeholder="i.e. Aashish Panthi"
+              required
+            />
+          </div>
+          <div className={styles.inputBox}>
             <div className={styles.inputLabelDiv}>Email Address</div>
             <input
               className={styles.frameInput}
@@ -42,15 +50,11 @@ const SignUp = () => {
               required
             />
           </div>
-          <input
-            className={styles.inputTextStyle5}
-            type="text"
-            placeholder={`First & Last Name`}
-          />
-          <div className={styles.inputTextStyle4}>
+
+          <div className={styles.inputBox}>
             <div className={styles.inputLabelDiv}>Password</div>
             <input
-              className={styles.frameInput1}
+              className={styles.frameInput}
               type="password"
               placeholder="********"
               minLength={6}
@@ -58,12 +62,15 @@ const SignUp = () => {
             />
           </div>
           <div className={styles.checkDiv}>
-            <div className={styles.rememberMeDiv}>Remember me</div>
             <input
               className={styles.shapeInput}
               type="checkbox"
               defaultChecked={true}
+              id="remember-me"
             />
+            <label for="remember-me" className={styles.rememberMeDiv}>
+              Remember me
+            </label>
           </div>
           <button className={styles.buttonPrimaryWithIcon}>
             <div className={styles.frameDiv}>
@@ -77,14 +84,16 @@ const SignUp = () => {
               </div>
             </div>
           </button>
-          <Link className={styles.alreadyHaveAnAccountSign} to="/sign-in">
+          <div className={styles.alreadyHaveAnAccountSign}>
             <span className={styles.alreadyHaveAnContainer}>
               <span
                 className={styles.alreadyHaveAn}
               >{`Already have an account? `}</span>
-              <span className={styles.signInSpan}>Sign in</span>
+              <Link to="/sign-in" className={styles.signInSpan}>
+                Sign in
+              </Link>
             </span>
-          </Link>
+          </div>
         </form>
       </div>
     </div>

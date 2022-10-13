@@ -5,7 +5,6 @@ const SignIn = () => {
   return (
     <div className={styles.signInDiv}>
       <div className={styles.formDiv}>
-        <div className={styles.bGDiv} />
         <div className={styles.titleDiv}>
           <div className={styles.welcomeBack}>Welcome back 👋</div>
           <div className={styles.fIllInTheRequiredDetailsT}>
@@ -29,7 +28,7 @@ const SignIn = () => {
           </div>
         </div>
         <form className={styles.inputContentForm} method="post">
-          <div className={styles.inputTextStyle3}>
+          <div className={styles.inputTextStyle}>
             <div className={styles.inputLabelDiv}>Email Address</div>
             <input
               className={styles.frameInput}
@@ -38,10 +37,10 @@ const SignIn = () => {
               required
             />
           </div>
-          <div className={styles.inputTextStyle4}>
+          <div className={styles.inputTextStyle}>
             <div className={styles.inputLabelDiv}>Password</div>
             <input
-              className={styles.frameInput1}
+              className={styles.frameInput}
               type="password"
               placeholder="********"
               minLength={6}
@@ -49,12 +48,15 @@ const SignIn = () => {
             />
           </div>
           <div className={styles.checkDiv}>
-            <div className={styles.rememberMeDiv}>Remember me</div>
             <input
               className={styles.shapeInput}
               type="checkbox"
               defaultChecked={true}
+              id="remember-me"
             />
+            <label for="remember-me" className={styles.rememberMeDiv}>
+              Remember me
+            </label>
           </div>
           <button className={styles.buttonPrimaryWithIcon}>
             <div className={styles.frameDiv}>
@@ -68,16 +70,16 @@ const SignIn = () => {
               </div>
             </div>
           </button>
-          <Link className={styles.dontHaveAnAccountCreate} to="/sign-up">
+          <div className={styles.dontHaveAnAccountCreate}>
             <span className={styles.dontHaveAnContainer}>
               <span
                 className={styles.dontHaveAn}
               >{`Don't have an account? `}</span>
-              <span className={styles.createFreeAccount}>
+              <Link to="/sign-up" className={styles.createFreeAccount}>
                 Create free account
-              </span>
+              </Link>
             </span>
-          </Link>
+          </div>
         </form>
       </div>
     </div>
