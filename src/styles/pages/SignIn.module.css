@@ -209,3 +209,8 @@
   font-family: var(--bold-52px);
   padding: 10px;
 }
+
+.error {
+  color: red;
+  font-size: var(--bold-16px1-size);
+}

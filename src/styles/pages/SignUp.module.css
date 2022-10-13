@@ -206,3 +206,13 @@
 .inputContentForm {
   width: 100%;
 }
+
+.verification {
+  font-size: var(--bold-32px-size);
+  color: var(--base-black);
+}
+
+.error {
+  color: red;
+  font-size: var(--bold-16px1-size);
+}

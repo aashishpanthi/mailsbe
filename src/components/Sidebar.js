@@ -1,10 +1,13 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useCallback } from "react";
+import { useSignOut } from "@nhost/react";
 
-const Sidebar = ({ styles }) => {
+const Sidebar = ({ styles, user }) => {
   const navigate = useNavigate();
+  const { signOut } = useSignOut();
 
   const onLogOutButtonClick = useCallback(() => {
+    signOut();
     navigate("/");
   }, [navigate]);
 
@@ -39,11 +42,13 @@ const Sidebar = ({ styles }) => {
       <div className={styles.menuDiv}>
         <div className={styles.titleDiv}>Profile</div>
         <div className={styles.frameDiv2}>
-          <img className={styles.image1Icon} alt="" src="../image-1@2x.png" />
+          <img className={styles.image1Icon} alt="" src={user.avatarUrl} />
           <div className={styles.textAndSupportingText}>
-            <div className={styles.titleDiv}>Aashish Panthi</div>
+            <div className={styles.titleDiv}>
+              {user?.metadata?.name ? user?.metadata?.name : user.displayName}
+            </div>
             <div className={styles.aashishpanthi11gmailcomDiv}>
-              aashishpanthi11@gmail.com
+              {user.email}
             </div>
           </div>
         </div>
