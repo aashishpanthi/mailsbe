@@ -7,7 +7,10 @@ function Footer({ styles }) {
         <b className={styles.pricingPlans}>
           Help us grow 💪 by contributing on GitHub
         </b>
-        <button className={styles.buttonPrimaryWithIcon}>
+        <a
+          className={styles.buttonPrimaryWithIcon}
+          href="https://github.com/aashishpanthi/mailsbe"
+        >
           <div className={styles.frameDiv}>
             <b className={styles.buttonName}>Contribute now</b>
             <div className={styles.iconDiv}>
@@ -18,12 +21,12 @@ function Footer({ styles }) {
               />
             </div>
           </div>
-        </button>
+        </a>
       </div>
       <div className={styles.lineDiv} />
       <div className={styles.widgetsDiv}>
         <div className={styles.widget0Div}>
-          <b className={styles.hELPMENUB}>About Mailbes</b>
+          <b className={styles.hELPMENUB}>About Mailsbe</b>
           <div className={styles.weAreHereToHelpYouSuceed}>
             We are here to help you suceed in your digital journey by helping
             you in your everyday journey. We help you to find out if the

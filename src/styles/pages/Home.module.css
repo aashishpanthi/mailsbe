@@ -161,6 +161,7 @@
 }
 .buttonPrimaryWithIcon {
   cursor: pointer;
+  text-decoration: none;
   border: 1.5px solid var(--gray-900);
   padding: var(--padding-md);
   background-color: var(--gray-900);
@@ -213,11 +214,6 @@
 }
 
 .sendIcon {
-  position: absolute;
-  top: 0;
-}
-.sendIcon {
-  left: 127px;
   width: 63px;
   height: 63px;
   object-fit: cover;
@@ -229,29 +225,19 @@
 }
 .knowIfTheUserReadTheEmai,
 .statusB {
-  position: absolute;
-  top: 91px;
-  left: 0;
   line-height: 28px;
   display: inline-block;
   width: 315px;
 }
 .knowIfTheUserReadTheEmai {
-  top: 141px;
-  left: 42px;
   font-size: var(--bold-16px1-size);
   line-height: 26px;
   color: var(--gray-600);
   width: 240px;
 }
 .vectorIcon {
-  position: absolute;
   height: 24.8%;
   width: 14.6%;
-  top: 0;
-  right: 42.54%;
-  bottom: 75.2%;
-  left: 42.86%;
   max-width: 100%;
   overflow: hidden;
   max-height: 100%;
@@ -263,29 +249,19 @@
 }
 .findOutExactlyWhenTheRece,
 .historyB {
-  position: absolute;
-  top: 85px;
-  left: 0;
   line-height: 28px;
   display: inline-block;
   width: 315px;
 }
 .findOutExactlyWhenTheRece {
-  top: 135px;
-  left: 13px;
   font-size: var(--bold-16px1-size);
   line-height: 26px;
   color: var(--gray-600);
   width: 290px;
 }
 .vectorIcon1 {
-  position: absolute;
   height: 19.47%;
   width: 13.02%;
-  top: 0;
-  right: 42.86%;
-  bottom: 80.53%;
-  left: 44.13%;
   max-width: 100%;
   overflow: hidden;
   max-height: 100%;
@@ -490,7 +466,7 @@
 .heroDiv {
   font-size: var(--pj-bold-52px-size);
   font-family: var(--inter-regular-18px);
-  /* min-height: 100vh; */
+  min-height: 550px;
 }
 
 .headerNav {
@@ -499,6 +475,8 @@
   align-items: center;
   padding: 0 20px;
   height: 80px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .headerNav button {

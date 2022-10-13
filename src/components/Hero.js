@@ -5,7 +5,7 @@ function Hero({ styles }) {
     <div className={styles.heroDiv}>
       <nav className={styles.headerNav} id="nvbar">
         <a className={styles.logoA}>
-          <b className={styles.mailbes}>mailbes</b>
+          <b className={styles.mailbes}>mailsbe</b>
         </a>
         <div className={styles.menuDiv}>
           <button className={styles.loginButton}>Login</button>
