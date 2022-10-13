@@ -4,16 +4,49 @@ import { useState } from "react";
 import { Helmet } from "react-helmet";
 import { useOutletContext } from "react-router-dom";
 import Input from "../components/Input";
+import { gql, useMutation } from "@apollo/client";
+import { toast } from "react-hot-toast";
+
+const UPDATE_USER_MUTATION = gql`
+  mutation ($id: uuid!, $displayName: String!, $metadata: jsonb) {
+    updateUser(
+      pk_columns: { id: $id }
+      _set: { displayName: $displayName, metadata: $metadata }
+    ) {
+      id
+      displayName
+      metadata
+    }
+  }
+`;
 
 const Profile = () => {
   const { user } = useOutletContext();
+  const [mutateUser, { loading: updatingProfile }] =
+    useMutation(UPDATE_USER_MUTATION);
 
   const [name, setname] = useState(user?.metadata?.name ?? "");
+  console.log(name);
 
   const isNameDirty = name !== user?.metadata?.name;
 
   const updateUserProfile = async (e) => {
     e.preventDefault();
+
+    try {
+      await mutateUser({
+        variables: {
+          id: user.id,
+          displayName: name.trim(),
+          metadata: {
+            name,
+          },
+        },
+      });
+      toast.success("Updated successfully", { id: "updateProfile" });
+    } catch (error) {
+      toast.error("Unable to update profile", { id: "updateProfile" });
+    }
   };
 
   return (
@@ -37,6 +70,7 @@ const Profile = () => {
                   label="Full name"
                   value={name}
                   onChange={(e) => setname(e.target.value)}
+                  disabled={updatingProfile}
                   required
                 />
               </div>
@@ -45,6 +79,7 @@ const Profile = () => {
                   type="email"
                   label="Email address"
                   value={user?.email}
+                  disabled={updatingProfile}
                   readOnly
                 />
               </div>
@@ -53,7 +88,7 @@ const Profile = () => {
             <div className={styles["form-footer"]}>
               <button
                 type="submit"
-                disabled={!isNameDirty}
+                disabled={!isNameDirty || updatingProfile}
                 className={styles.button}
               >
                 Update
