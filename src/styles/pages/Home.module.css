@@ -244,7 +244,7 @@
   color: var(--gray-600);
   width: 283px;
 }
-.div,
+
 .sendIcon {
   position: absolute;
   top: 0;
@@ -256,7 +256,7 @@
   object-fit: cover;
 }
 .div {
-  left: 0;
+  position: relative;
   width: 315px;
   height: 195px;
 }
@@ -290,9 +290,7 @@
   max-height: 100%;
 }
 .div1 {
-  position: absolute;
-  top: 8px;
-  left: 338px;
+  position: relative;
   width: 315px;
   height: 193px;
 }
@@ -326,62 +324,40 @@
   max-height: 100%;
 }
 .div2 {
-  position: absolute;
-  top: 14px;
-  left: 681px;
+  position: relative;
   width: 315px;
   height: 187px;
 }
-.linesIcon,
+
 .listDiv {
-  position: absolute;
-  top: 0;
-  left: 330px;
-  width: 337px;
-  height: 287px;
+  display: flex;
+  max-width: 996px;
+  flex-wrap: wrap;
 }
-.listDiv {
-  top: 198px;
-  left: 0;
-  width: 996px;
-}
-.exploreTheUnexploredPotenti,
-.useEmailLikeAGeek {
-  position: absolute;
-  top: 0;
-  left: 0;
-  line-height: 48px;
-  display: inline-block;
-  width: 616px;
-}
+
 .exploreTheUnexploredPotenti {
-  top: 75px;
-  left: 48px;
   font-size: var(--pj-regular-18px-size);
-  line-height: 28px;
   color: var(--gray-600);
-  width: 521px;
+  margin-bottom: 30px;
 }
+
 .contentDiv1 {
-  position: absolute;
-  top: 0;
-  left: 187px;
-  width: 616px;
-  height: 103px;
+  max-width: 616px;
+  margin: 0 auto;
+  margin-top: 100px;
   font-size: var(--pj-bold-42px-size);
 }
 .featureDiv {
-  position: absolute;
-  top: 1293px;
-  left: 300px;
-  width: 996px;
-  height: 485px;
+  max-width: 996px;
+  position: relative;
+  margin: 25px auto;
+  margin-top: 50px;
 }
 .bGIframe,
 .videoNav {
-  position: absolute;
   width: 880px;
   height: 526px;
+  margin: 0 auto;
 }
 .bGIframe {
   top: 0;
@@ -390,10 +366,7 @@
   background-color: var(--shades-white);
   box-shadow: 0 24px 164px -20px rgba(35, 40, 105, 0.15);
 }
-.videoNav {
-  top: 570px;
-  left: 361px;
-}
+
 .knowIfYourEmailHasBeenRe {
   line-height: 62px;
   font-weight: 800;

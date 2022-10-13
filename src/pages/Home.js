@@ -15,7 +15,7 @@ const Home = () => {
           allowFullScreen
         />
       </nav>
-      {/* <Features styles={styles} /> */}
+      <Features styles={styles} />
       {/* <Footer styles={styles} /> */}
     </div>
   );
