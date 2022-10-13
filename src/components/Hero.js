@@ -1,6 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Hero({ styles }) {
+  const handleScroll = () => {
+    const videoContainer = document.getElementById("video-container");
+    videoContainer.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <div className={styles.heroDiv}>
       <nav className={styles.headerNav} id="nvbar">
@@ -8,8 +14,10 @@ function Hero({ styles }) {
           <b className={styles.mailbes}>mailsbe</b>
         </a>
         <div className={styles.menuDiv}>
-          <button className={styles.loginButton}>Login</button>
-          <button className={styles.buttonPrimaryWithIcon2}>
+          <Link to="/sign-in" className={styles.loginButton}>
+            Login
+          </Link>
+          <Link to="/sign-up" className={styles.buttonPrimaryWithIcon2}>
             <div className={styles.frameDiv}>
               <b className={styles.buttonName3}>Sign up</b>
               <div className={styles.iconDiv}>
@@ -20,18 +28,18 @@ function Hero({ styles }) {
                 />
               </div>
             </div>
-          </button>
+          </Link>
         </div>
       </nav>
       <div className={styles.contentDiv2}>
         <div className={styles.smartEmailStatusFinderMa}>
-          Smart email status finder , made for Everyone
+          Smart email status finder, made for Everyone
         </div>
         <div className={styles.knowIfYourEmailHasBeenRe}>
           Know if your email has been read
         </div>
         <div className={styles.buttonsDiv}>
-          <button className={styles.buttonPrimaryWithIcon1}>
+          <Link to="/sign-up" className={styles.buttonPrimaryWithIcon1}>
             <div className={styles.frameDiv}>
               <b className={styles.buttonName1}>Get started now</b>
               <div className={styles.iconDiv}>
@@ -42,8 +50,12 @@ function Hero({ styles }) {
                 />
               </div>
             </div>
-          </button>
-          <button className={styles.buttonPrimaryWithIconLeft} autoFocus>
+          </Link>
+          <button
+            className={styles.buttonPrimaryWithIconLeft}
+            autoFocus
+            onClick={handleScroll}
+          >
             <div className={styles.frameDiv2}>
               <div className={styles.iconDiv2}>
                 <img
@@ -57,7 +69,7 @@ function Hero({ styles }) {
           </button>
         </div>
         <div className={styles.createYourAccountForFree}>
-          Create your account . For free of cost
+          Create your account. For free of cost
         </div>
       </div>
     </div>

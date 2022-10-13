@@ -301,6 +301,7 @@
   width: 880px;
   height: 526px;
   margin: 0 auto;
+  margin-top: 50px;
 }
 .bGIframe {
   top: 0;
@@ -346,6 +347,7 @@
   justify-content: center;
 }
 .buttonPrimaryWithIcon1 {
+  text-decoration: none;
   cursor: pointer;
   border: 0;
   padding: var(--padding-md);
@@ -437,6 +439,7 @@
 }
 .menuDiv {
   display: flex;
+  align-items: center;
 }
 
 .buttonName3 {
@@ -466,7 +469,7 @@
 .heroDiv {
   font-size: var(--pj-bold-52px-size);
   font-family: var(--inter-regular-18px);
-  min-height: 550px;
+  min-height: 500px;
 }
 
 .headerNav {
@@ -479,8 +482,10 @@
   margin: 0 auto;
 }
 
-.headerNav button {
+.headerNav .buttonPrimaryWithIcon2,
+.headerNav .loginButton {
   margin-left: 15px;
+  text-decoration: none;
 }
 
 .homeDiv {
