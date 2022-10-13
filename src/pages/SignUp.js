@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import styles from "./SignUp.module.css";
+import styles from "../styles/pages/SignUp.module.css";
 
 const SignUp = () => {
   return (
