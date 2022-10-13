@@ -3,22 +3,17 @@
   display: inline-block;
 }
 .weAreHereToHelpYouSuceed {
-  top: 54px;
   line-height: 22px;
   width: 396px;
   height: 98px;
 }
 .hELPMENUB {
-  top: 0;
   font-size: var(--bold-16px1-size);
   line-height: 24px;
   color: var(--gray-900);
 }
 .a,
 .logoTwitter2Icon {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 16px;
   height: 12.87px;
 }
@@ -28,9 +23,6 @@
 }
 .a1,
 .logoFbSimple2Icon {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 9.05px;
   height: 17.35px;
 }
@@ -41,9 +33,6 @@
 }
 .a2,
 .logoInstagram1Icon {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 19.4px;
   height: 19.31px;
 }
@@ -53,9 +42,6 @@
 }
 .a3,
 .logoGithub1Icon {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 18.56px;
   height: 18.02px;
 }
@@ -63,25 +49,26 @@
   text-decoration: none;
   left: 147.46px;
 }
-.socialDiv,
-.widget0Div {
-  position: absolute;
-  top: 181px;
-  left: 1px;
-  width: 166.02px;
-  height: 19.31px;
+
+.socialDiv {
+  display: flex;
+  width: 100px;
+  justify-content: space-between;
 }
+
+.widgetsDiv {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 25px;
+}
+
 .widget0Div {
-  top: 277px;
-  left: 151px;
-  width: 396px;
-  height: 200.31px;
+  max-width: 396px;
   color: var(--gray-600);
+  padding: 10px;
 }
 .career {
-  position: absolute;
-  top: 165px;
-  left: 0;
   display: inline-block;
 }
 .career,
@@ -92,19 +79,12 @@
   color: inherit;
 }
 .worksA {
-  position: absolute;
-  top: 125px;
-  left: 0;
   display: inline-block;
 }
-.features {
-  top: 85px;
-}
+
 .about,
 .features,
 .hELPMENUB1 {
-  position: absolute;
-  left: 0;
   display: inline-block;
 }
 .about {
@@ -119,9 +99,6 @@
   line-height: 24px;
 }
 .widget1Div {
-  position: absolute;
-  top: 277px;
-  left: 1154px;
   width: 77px;
   height: 205px;
 }
@@ -137,25 +114,16 @@
   margin: 0;
 }
 .aboutFeaturesWorks {
-  position: absolute;
-  top: 45px;
-  left: 0;
   line-height: 40px;
   white-space: pre-wrap;
   display: inline-block;
 }
 .widget2Div {
-  position: absolute;
-  top: 277px;
-  left: 1310px;
   width: 128px;
   height: 205px;
   color: var(--color-gray-1500);
 }
 .pricingPlans {
-  position: absolute;
-  top: 0;
-  left: 0;
   line-height: 42px;
   display: inline-block;
   width: 405px;
@@ -203,14 +171,16 @@
 }
 .contentDiv,
 .lineDiv {
-  position: absolute;
-  width: 1297px;
+  width: 100%;
 }
+
 .contentDiv {
-  top: 81px;
-  left: 151px;
-  height: 84px;
+  min-height: 84px;
   font-size: var(--bold-32px-size);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
 }
 .lineDiv {
   top: 220.5px;
@@ -221,24 +191,21 @@
 }
 .footer {
   max-width: 1200px;
-  height: 576px;
+  min-height: 200px;
+  margin: 0 auto;
   text-align: left;
   font-size: var(--regular-13px1-size);
   color: var(--gray-900);
   font-family: var(--regular-13px1);
+  margin-top: 100px;
 }
 .sendB,
 .sendEmailDirectlyFromTheD {
-  position: absolute;
-  top: 99px;
-  left: 0;
   line-height: 28px;
   display: inline-block;
   width: 315px;
 }
 .sendEmailDirectlyFromTheD {
-  top: 143px;
-  left: 16px;
   font-size: var(--bold-16px1-size);
   line-height: 26px;
   color: var(--gray-600);

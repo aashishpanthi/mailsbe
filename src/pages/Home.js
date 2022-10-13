@@ -16,7 +16,7 @@ const Home = () => {
         />
       </nav>
       <Features styles={styles} />
-      {/* <Footer styles={styles} /> */}
+      <Footer styles={styles} />
     </div>
   );
 };
