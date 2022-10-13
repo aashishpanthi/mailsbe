@@ -10,13 +10,13 @@ const Sidebar = ({ styles }) => {
 
   return (
     <div className={styles.sideBarDiv}>
-      <Link className={styles.logoA} to="/home">
+      <Link className={styles.logoA} to="/">
         <img
           className={styles.contactMailIcon}
           alt=""
           src="../contact-mail.svg"
         />
-        <div className={styles.mAILBESDiv}>MAILBES</div>
+        <div className={styles.mAILBESDiv}>MAILSBE</div>
       </Link>
       <button className={styles.cTAButton} autoFocus>
         <img className={styles.arrowDownIcon} alt="" src="../icon.svg" />
@@ -25,23 +25,16 @@ const Sidebar = ({ styles }) => {
       <div className={styles.menuDiv}>
         <div className={styles.titleDiv}>Menu</div>
         <div className={styles.navDiv}>
-          <a className={styles.overviewA}>
+          <Link to="/app" className={styles.overviewA}>
             <img className={styles.icon1} alt="" src="../icon1.svg" />
             <div className={styles.overviewDiv}>Overview</div>
-          </a>
+          </Link>
         </div>
       </div>
-      <a className={styles.notifications}>
-        <img className={styles.icon1} alt="" src="../icon2.svg" />
-        <div className={styles.overviewDiv}>Notifications</div>
-        <div className={styles.frameDiv}>
-          <div className={styles.div}>10</div>
-        </div>
-      </a>
-      <a className={styles.notifications}>
+      <Link to="/app/profile" className={styles.notifications}>
         <img className={styles.icon1} alt="" src="../icon3.svg" />
         <div className={styles.overviewDiv}>Settings</div>
-      </a>
+      </Link>
       <div className={styles.divider} />
       <div className={styles.menuDiv}>
         <div className={styles.titleDiv}>Profile</div>

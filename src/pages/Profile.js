@@ -1,28 +1,25 @@
-import styles from '../styles/pages/Profile.module.css';
+import styles from "../styles/pages/Profile.module.css";
 
-import { useState } from 'react';
-import { Helmet } from 'react-helmet';
-import { useOutletContext } from 'react-router-dom';
-import Input from '../components/Input';
+import { useState } from "react";
+import { Helmet } from "react-helmet";
+import { useOutletContext } from "react-router-dom";
+import Input from "../components/Input";
 
 const Profile = () => {
   const { user } = useOutletContext();
 
-  const [firstName, setFirstName] = useState(user?.metadata?.firstName ?? '');
-  const [lastName, setLastName] = useState(user?.metadata?.lastName ?? '');
+  const [name, setname] = useState(user?.metadata?.name ?? "");
 
-  const isFirstNameDirty = firstName !== user?.metadata?.firstName;
-  const isLastNameDirty = lastName !== user?.metadata?.lastName;
-  const isProfileFormDirty = isFirstNameDirty || isLastNameDirty;
+  const isNameDirty = name !== user?.metadata?.name;
 
-  const updateUserProfile = async e => {
+  const updateUserProfile = async (e) => {
     e.preventDefault();
   };
 
   return (
     <>
       <Helmet>
-        <title>Profile - Nhost</title>
+        <title>Profile - Mailsbe</title>
       </Helmet>
 
       <div className={styles.container}>
@@ -33,24 +30,17 @@ const Profile = () => {
 
         <div className={styles.card}>
           <form onSubmit={updateUserProfile} className={styles.form}>
-            <div className={styles['form-fields']}>
-              <div className={styles['input-group']}>
+            <div className={styles["form-fields"]}>
+              <div className={styles["input-group"]}>
                 <Input
                   type="text"
-                  label="First name"
-                  value={firstName}
-                  onChange={e => setFirstName(e.target.value)}
-                  required
-                />
-                <Input
-                  type="text"
-                  label="Last name"
-                  value={lastName}
-                  onChange={e => setLastName(e.target.value)}
+                  label="Full name"
+                  value={name}
+                  onChange={(e) => setname(e.target.value)}
                   required
                 />
               </div>
-              <div className={styles['input-email-wrapper']}>
+              <div className={styles["input-email-wrapper"]}>
                 <Input
                   type="email"
                   label="Email address"
@@ -60,10 +50,10 @@ const Profile = () => {
               </div>
             </div>
 
-            <div className={styles['form-footer']}>
+            <div className={styles["form-footer"]}>
               <button
                 type="submit"
-                disabled={!isProfileFormDirty}
+                disabled={!isNameDirty}
                 className={styles.button}
               >
                 Update

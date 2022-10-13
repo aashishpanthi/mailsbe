@@ -109,7 +109,7 @@
   justify-content: flex-start;
 }
 .columnDiv {
-  width: 295px;
+  max-width: 250px;
   flex-shrink: 0;
   flex-direction: column;
   align-items: flex-start;
@@ -187,7 +187,7 @@
   color: var(--gray-700);
 }
 .columnDiv1 {
-  width: 100px;
+  max-width: 75px;
   flex-direction: column;
   align-items: flex-start;
   text-align: center;
@@ -211,7 +211,7 @@
   justify-content: flex-start;
 }
 .columnDiv2 {
-  width: 350px;
+  max-width: 275px;
   flex-shrink: 0;
   flex-direction: column;
   align-items: flex-start;
@@ -230,7 +230,7 @@
   justify-content: flex-start;
 }
 .columnDiv3 {
-  width: 200px;
+  max-width: 200px;
   flex-direction: column;
   align-items: flex-start;
   color: var(--gray-700);
@@ -275,7 +275,6 @@
   flex-shrink: 0;
   overflow: hidden;
 }
-.dropdownDiv,
 .tableCellButton {
   display: flex;
   flex-direction: column;
@@ -313,16 +312,13 @@
   color: var(--gray-500);
 }
 .tableDiv {
-  position: absolute;
-  top: 51px;
-  left: 366px;
   border-radius: 8px;
   box-shadow: var(--shadow-md);
   border: 1px solid var(--color-gray-400);
   box-sizing: border-box;
-  width: 1216px;
-  overflow: hidden;
+  min-width: 950px;
   flex-direction: column;
+  margin-left: 25px;
 }
 .contactMailIcon {
   position: relative;
@@ -510,7 +506,7 @@
   cursor: pointer;
   border: 0;
   padding: 6px var(--padding-2xs);
-  background-color: var(--neutral-50);
+  background-color: var(--gray-100);
   align-self: stretch;
   border-radius: var(--br-2xs);
   gap: var(--gap-2xs);
@@ -520,11 +516,10 @@
   background-color: var(--shades-white);
 }
 .sideBarDiv {
-  position: absolute;
-  top: calc(50% - 306.5px);
-  left: calc(50% - 800px);
   border-radius: var(--br-2xs);
-  width: 366px;
+  max-width: 300px;
+  width: 100%;
+  min-width: 200px;
   display: flex;
   flex-direction: column;
   padding: var(--padding-2xl);
@@ -535,14 +530,16 @@
   font-size: var(--bold-16px1-size);
   color: var(--neutral-500);
   font-family: var(--font-manrope);
+  border-right: 1px solid var(--color-gray-400);
 }
 .dashboardDiv {
   position: relative;
   width: 100%;
-  height: 765px;
+  min-height: 100vh;
   overflow: hidden;
   text-align: left;
   font-size: var(--pj-regular-18px-size);
   color: var(--gray-900);
   font-family: var(--inter-regular-18px);
+  display: flex;
 }
