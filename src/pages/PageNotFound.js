@@ -1,12 +1,12 @@
 import { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
-import styles from "./PageNotFound.module.css";
+import styles from "../styles/pages/PageNotFound.module.css";
 
 const PageNotFound = () => {
   const navigate = useNavigate();
 
   const onCTAButtonClick = useCallback(() => {
-    navigate("/home");
+    navigate("/");
   }, [navigate]);
 
   return (
