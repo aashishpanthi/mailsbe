@@ -1,15 +1,5 @@
-.bGDiv {
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: var(--color);
-  width: 1599px;
-  height: 576px;
-}
 .hELPMENUB,
 .weAreHereToHelpYouSuceed {
-  position: absolute;
-  left: 0;
   display: inline-block;
 }
 .weAreHereToHelpYouSuceed {
@@ -184,7 +174,6 @@
   width: 18px;
   height: 18px;
   flex-shrink: 0;
-  overflow: hidden;
 }
 .iconDiv {
   display: none;
@@ -207,12 +196,8 @@
   border: 1.5px solid var(--gray-900);
   padding: var(--padding-md);
   background-color: var(--gray-900);
-  position: absolute;
-  top: 26px;
-  left: 1084px;
   border-radius: 60px;
   box-sizing: border-box;
-  width: 213px;
   height: 50px;
   flex-direction: column;
 }
@@ -235,10 +220,7 @@
   height: 1px;
 }
 .footer {
-  position: absolute;
-  top: 1874px;
-  left: 0;
-  width: 1599px;
+  max-width: 1200px;
   height: 576px;
   text-align: left;
   font-size: var(--regular-13px1-size);
@@ -413,9 +395,6 @@
   left: 361px;
 }
 .knowIfYourEmailHasBeenRe {
-  position: absolute;
-  top: 48px;
-  left: 0;
   line-height: 62px;
   font-weight: 800;
   font-family: var(--regular-13px1);
@@ -424,9 +403,6 @@
 }
 .createYourAccountForFree,
 .smartEmailStatusFinderMa {
-  position: absolute;
-  top: 0;
-  left: 47px;
   font-size: var(--pj-regular-18px-size);
   line-height: 28px;
   color: var(--gray-600);
@@ -434,7 +410,6 @@
   width: 533px;
 }
 .createYourAccountForFree {
-  top: 298px;
   font-size: var(--bold-16px1-size);
   line-height: 26px;
   color: var(--gray-5001);
@@ -459,14 +434,12 @@
   border: 0;
   padding: var(--padding-md);
   background-color: var(--base-black);
-  position: absolute;
-  top: 0;
-  left: 0;
   border-radius: var(--br-sm);
   width: 222px;
   height: 56px;
   flex-direction: column;
   box-sizing: border-box;
+  margin-right: 10px;
 }
 .iconDiv2 {
   flex-direction: row;
@@ -495,31 +468,31 @@
   border: 2px solid var(--gray-400);
   padding: var(--padding-md);
   background-color: transparent;
-  position: absolute;
-  top: 0;
-  left: 241px;
   border-radius: var(--br-sm);
   box-sizing: border-box;
   width: 246px;
   height: 56px;
   flex-direction: column;
 }
-.buttonsDiv,
-.contentDiv2 {
-  position: absolute;
-  top: 208px;
-  left: 83px;
-  width: 487px;
-  height: 56px;
+.buttonsDiv {
+  display: flex;
+  align-items: center;
 }
 .contentDiv2 {
-  top: 125px;
-  left: 454px;
-  width: 627px;
-  height: 324px;
+  width: 100%;
+  min-height: 324px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 50px 0 20px 0;
 }
+
+.contentDiv2 > div {
+  margin-bottom: 15px;
+}
+
 .mailbes {
-  top: 0;
   font-size: var(--bold-16px1-size);
   letter-spacing: 3px;
   line-height: 30px;
@@ -529,24 +502,15 @@
   color: var(--gray-900);
   text-align: left;
 }
-.loginButton,
-.logoA,
-.mailbes {
-  position: absolute;
-  left: 0;
-}
+
 .logoA {
   text-decoration: none;
-  top: 7px;
-  width: 88px;
-  height: 30px;
 }
 .loginButton {
   cursor: pointer;
   border: 0;
   padding: 0;
   background-color: transparent;
-  top: 0;
   font-size: var(--bold-16px1-size);
   line-height: 24px;
   font-weight: 500;
@@ -556,12 +520,9 @@
   display: inline-block;
 }
 .menuDiv {
-  position: absolute;
-  top: 10px;
-  left: 1343px;
-  width: 43px;
-  height: 24px;
+  display: flex;
 }
+
 .buttonName3 {
   position: relative;
   font-size: var(--bold-16px1-size);
@@ -576,9 +537,6 @@
   border: 0;
   padding: var(--padding-md);
   background-color: var(--base-black);
-  position: absolute;
-  top: 0;
-  left: 1430px;
   border-radius: var(--br-sm);
   width: 114px;
   height: 45px;
@@ -588,27 +546,30 @@
   align-items: center;
   justify-content: center;
 }
-.headerNav,
+
 .heroDiv {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 1544px;
-  height: 45px;
-}
-.heroDiv {
-  top: 19px;
-  left: 32px;
-  height: 449px;
   font-size: var(--pj-bold-52px-size);
   font-family: var(--inter-regular-18px);
+  /* min-height: 100vh; */
 }
+
+.headerNav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  height: 80px;
+}
+
+.headerNav button {
+  margin-left: 15px;
+}
+
 .homeDiv {
   position: relative;
   background-color: #fafafa;
   width: 100%;
-  height: 2450px;
-  overflow: hidden;
+  min-height: 100vh;
   text-align: center;
   font-size: var(--pj-bold-21px-size);
   color: var(--gray-900);
