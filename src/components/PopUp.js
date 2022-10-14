@@ -69,6 +69,7 @@ const PopUp = ({ setPopUp }) => {
       });
       toast.success("Email added successfully");
       setPopUp(false);
+      window.location.reload();
     } catch (err) {
       toast.error("Unable to add email");
     }

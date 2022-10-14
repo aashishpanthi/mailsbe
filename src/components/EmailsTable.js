@@ -1,6 +1,6 @@
 import { Delete } from "@mui/icons-material";
 import { IconButton } from "@mui/material";
-import { gql, useQuery, useMutation } from "@apollo/client";
+import { gql, useLazyQuery, useMutation } from "@apollo/client";
 import { useUserData } from "@nhost/react";
 import { CircularProgress } from "@mui/material";
 import toast from "react-hot-toast";
@@ -32,27 +32,31 @@ const EmailsTable = ({ styles }) => {
   const user = useUserData();
   const [emails, setEmails] = useState([]);
 
-  const { loading, error, data } = useQuery(GET_EMAILS, {
+  const [getEmails, { loading, error, data }] = useLazyQuery(GET_EMAILS, {
     variables: { user: user.id },
   });
 
   const [deleteTodo, { loading: deleting, error: deleteError }] =
     useMutation(DELETE_EMAIL);
 
-  useEffect(() => {
-    if (data) {
-      toast.success("Emails fetched successfully");
+  const fetchEmails = async () => {
+    try {
+      await getEmails({
+        variables: { user: user.id },
+      });
+
+      // toast.success("Emails fetched successfully");
       setEmails(data.emails);
-    } else if (error) {
-      toast.error("Unable to fetch emails");
-      console.log(error);
+    } catch (err) {
+      console.log(err);
     }
-  }, [data]);
+  };
+
+  useEffect(() => {
+    fetchEmails();
+  }, [data, user]);
 
   const deleteEmail = async (id) => {
-    console.log(id);
-
-    // ask for confirmation using dialog
     const confirmation = window.confirm(
       "Are you sure you want to delete this?"
     );
@@ -68,6 +72,7 @@ const EmailsTable = ({ styles }) => {
       });
 
       toast.success("Email deleted successfully");
+      window.location.reload();
     } catch (err) {
       toast.error("Unable to delete email");
     }
@@ -80,6 +85,11 @@ const EmailsTable = ({ styles }) => {
       </div>
     );
   }
+
+  if (emails.length === 0) {
+    return <div className={styles.loader}>No emails found</div>;
+  }
+
   return (
     <div className={styles.contentDiv1}>
       <div className={styles.columnDiv}>
