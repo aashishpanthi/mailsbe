@@ -1,0 +1,70 @@
+.groupForm {
+  position: relative;
+  width: 100%;
+  flex-shrink: 0;
+}
+.popUpDiv {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  padding: var(--padding-xs) 15px;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: flex-start;
+  width: 90%;
+  max-height: 90%;
+  max-width: 500px;
+  border: 2px solid var(--neutral-300);
+  border-radius: 5px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.popup {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.textAreaOutlinedTextField {
+  margin: 20px 0 !important;
+}
+
+.buttonContainedText {
+  display: flex;
+  margin: 20px auto !important;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  padding: 0 10px;
+  margin-bottom: 20px;
+}
+
+.copyBox {
+  display: flex;
+  position: relative;
+}
+
+.copyIcon {
+  position: absolute;
+  top: 40%;
+  right: 10px;
+  transform: translateY(-60%);
+  cursor: pointer;
+}
+
+.inputFilledTextField {
+  width: 100%;
+}

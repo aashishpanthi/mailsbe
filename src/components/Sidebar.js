@@ -2,7 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useCallback } from "react";
 import { useSignOut } from "@nhost/react";
 
-const Sidebar = ({ styles, user }) => {
+const Sidebar = ({ styles, user, setPopUp }) => {
   const navigate = useNavigate();
   const { signOut } = useSignOut();
 
@@ -28,7 +28,11 @@ const Sidebar = ({ styles, user }) => {
         />
         <div className={styles.mAILBESDiv}>MAILSBE</div>
       </Link>
-      <button className={styles.cTAButton} autoFocus>
+      <button
+        className={styles.cTAButton}
+        autoFocus
+        onClick={() => setPopUp(true)}
+      >
         <img className={styles.arrowDownIcon} alt="" src="../icon.svg" />
         <div className={styles.buttonDiv}>Compose mail</div>
       </button>
