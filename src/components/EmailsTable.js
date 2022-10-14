@@ -1,3 +1,5 @@
+import { Delete } from "@mui/icons-material";
+import { IconButton } from "@mui/material";
 import React from "react";
 
 const EmailsTable = ({ styles }) => {
@@ -7,11 +9,6 @@ const EmailsTable = ({ styles }) => {
         <div className={styles.tableHeaderCell}>
           <div className={styles.tableHeaderDiv}>
             <div className={styles.textDiv1}>Email</div>
-            <img
-              className={styles.arrowDownIcon}
-              alt=""
-              src="../arrowdown.svg"
-            />
           </div>
         </div>
         <div className={styles.tableCellDiv}>
@@ -45,7 +42,7 @@ const EmailsTable = ({ styles }) => {
       <div className={styles.columnDiv2}>
         <div className={styles.tableHeaderCell}>
           <div className={styles.tableHeaderDiv1}>
-            <div className={styles.textDiv1}>About</div>
+            <div className={styles.textDiv1}>Description</div>
           </div>
         </div>
         <div className={styles.tableCellDiv}>
@@ -88,18 +85,14 @@ const EmailsTable = ({ styles }) => {
       <div className={styles.dropdownDiv}>
         <div className={styles.tableHeaderCell8} />
         <button className={styles.tableCellButton}>
-          <img
-            className={styles.moreVerticalIcon}
-            alt=""
-            src="../morevertical.svg"
-          />
+          <IconButton>
+            <Delete />
+          </IconButton>
         </button>
         <button className={styles.tableCellButton}>
-          <img
-            className={styles.moreVerticalIcon}
-            alt=""
-            src="../morevertical.svg"
-          />
+          <IconButton>
+            <Delete />
+          </IconButton>
         </button>
       </div>
     </div>

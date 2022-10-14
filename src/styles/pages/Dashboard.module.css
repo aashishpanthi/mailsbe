@@ -109,7 +109,7 @@
   justify-content: flex-start;
 }
 .columnDiv {
-  max-width: 250px;
+  min-width: 250px;
   flex-shrink: 0;
   flex-direction: column;
   align-items: flex-start;
@@ -187,7 +187,7 @@
   color: var(--gray-700);
 }
 .columnDiv1 {
-  max-width: 75px;
+  min-width: 75px;
   flex-direction: column;
   align-items: flex-start;
   text-align: center;
@@ -211,7 +211,7 @@
   justify-content: flex-start;
 }
 .columnDiv2 {
-  max-width: 275px;
+  min-width: 275px;
   flex-shrink: 0;
   flex-direction: column;
   align-items: flex-start;
@@ -230,7 +230,7 @@
   justify-content: flex-start;
 }
 .columnDiv3 {
-  max-width: 200px;
+  min-width: 200px;
   flex-direction: column;
   align-items: flex-start;
   color: var(--gray-700);
@@ -268,13 +268,7 @@
   height: 44px;
   flex-shrink: 0;
 }
-.moreVerticalIcon {
-  position: relative;
-  width: 20px;
-  height: 20px;
-  flex-shrink: 0;
-  overflow: hidden;
-}
+
 .tableCellButton {
   display: flex;
   flex-direction: column;
@@ -282,7 +276,6 @@
   justify-content: flex-start;
 }
 .tableCellButton {
-  cursor: pointer;
   border: 0;
   padding: var(--padding-md) var(--padding-2xl);
   background-color: transparent;
@@ -332,6 +325,7 @@
   font-weight: 800;
   background: linear-gradient(-88.11deg, #059669, #00d995);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
 }
