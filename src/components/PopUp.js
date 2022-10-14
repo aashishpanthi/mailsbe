@@ -15,7 +15,6 @@ import { useUserData } from "@nhost/react";
 import styles from "../styles/components/Popup.module.css";
 import { useState, useEffect } from "react";
 import { gql, useMutation } from "@apollo/client";
-import { useAuthenticated } from "@nhost/react";
 
 const ADD_EMAIL = gql`
   mutation addEmail(

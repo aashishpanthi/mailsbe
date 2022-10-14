@@ -1,8 +1,56 @@
-import { Delete, Diversity1Sharp } from "@mui/icons-material";
+import { Delete } from "@mui/icons-material";
 import { IconButton } from "@mui/material";
-import React from "react";
+import { gql, useQuery } from "@apollo/client";
+import { useUserData } from "@nhost/react";
+import { CircularProgress } from "@mui/material";
+import toast from "react-hot-toast";
+import { useEffect, useState } from "react";
+
+const GET_EMAILS = gql`
+  query getEmails($user: String) {
+    emails(order_by: { created_at: desc }, where: { user: { _eq: $user } }) {
+      created_at
+      description
+      email
+      id
+      img_text
+      seen
+      seen_at
+    }
+  }
+`;
 
 const EmailsTable = ({ styles }) => {
+  const user = useUserData();
+  const [emails, setEmails] = useState([]);
+
+  const { loading, error, data } = useQuery(GET_EMAILS, {
+    variables: { user: user.id },
+  });
+
+  useEffect(() => {
+    if (data) {
+      toast.success("Emails fetched successfully");
+      setEmails(data.emails);
+    } else if (error) {
+      toast.error("Unable to fetch emails");
+      console.log(error);
+    }
+  }, [data]);
+
+  const deleteEmail = (id) => {
+    console.log(id);
+
+    toast.success("Email deleted successfully");
+  };
+
+  if (loading) {
+    return (
+      <div className={styles.loader}>
+        <CircularProgress />
+      </div>
+    );
+  }
   return (
     <div className={styles.contentDiv1}>
       <div className={styles.columnDiv}>
@@ -11,12 +59,11 @@ const EmailsTable = ({ styles }) => {
             <div className={styles.textDiv1}>Email</div>
           </div>
         </div>
-        <div className={styles.tableCellDiv}>
-          <div className={styles.supportingTextDiv1}>test@user.com</div>
-        </div>
-        <div className={styles.tableCellDiv}>
-          <div className={styles.supportingTextDiv1}>test2@gmail.com</div>
-        </div>
+        {emails.map((email) => (
+          <div className={styles.tableCellDiv} key={email.id}>
+            <div className={styles.supportingTextDiv1}>{email.email}</div>
+          </div>
+        ))}
       </div>
       <div className={styles.columnDiv1}>
         <div className={styles.tableHeaderCell1}>
@@ -24,20 +71,17 @@ const EmailsTable = ({ styles }) => {
             <div className={styles.textDiv1}>Status</div>
           </div>
         </div>
-        <div className={styles.tableCellDiv}>
-          <div className={styles.badgeDiv}>
-            <div className={styles.badgeBaseDiv}>
-              <div className={styles.textDiv1}>Seen</div>
+        {emails.map(({ seen, id }) => (
+          <div className={styles.tableCellDiv} key={id}>
+            <div className={styles.badgeDiv}>
+              <div className={styles.badgeBaseDiv}>
+                <div className={seen ? styles.textDiv : styles.textDiv1}>
+                  {seen ? `Seen` : `Unseen`}
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-        <div className={styles.tableCellDiv}>
-          <div className={styles.badgeDiv}>
-            <div className={styles.badgeBaseDiv1}>
-              <div className={styles.textDiv1}>Unseen</div>
-            </div>
-          </div>
-        </div>
+        ))}
       </div>
       <div className={styles.columnDiv2}>
         <div className={styles.tableHeaderCell}>
@@ -45,16 +89,11 @@ const EmailsTable = ({ styles }) => {
             <div className={styles.textDiv1}>Description</div>
           </div>
         </div>
-        <div className={styles.tableCellDiv}>
-          <div className={styles.supportingTextDiv1}>
-            Brings all your news into one place
+        {emails.map(({ description, id }) => (
+          <div className={styles.tableCellDiv} key={id}>
+            <div className={styles.supportingTextDiv1}>{description}</div>
           </div>
-        </div>
-        <div className={styles.tableCellDiv}>
-          <div className={styles.supportingTextDiv1}>
-            Super lightweight design app
-          </div>
-        </div>
+        ))}
       </div>
       <div className={styles.columnDiv3}>
         <div className={styles.tableHeaderCell}>
@@ -62,12 +101,14 @@ const EmailsTable = ({ styles }) => {
             <div className={styles.textDiv1}>Date sent</div>
           </div>
         </div>
-        <div className={styles.tableCellDiv}>
-          <div className={styles.dateDiv}>2022-09-11 5:30AM</div>
-        </div>
-        <div className={styles.tableCellDiv}>
-          <div className={styles.dateDiv}>2022-07-11 5:30AM</div>
-        </div>
+
+        {emails.map(({ created_at, id }) => (
+          <div className={styles.tableCellDiv} key={id}>
+            <div className={styles.dateDiv}>
+              {new Date(created_at.split(".")[0]).toLocaleString()}
+            </div>
+          </div>
+        ))}
       </div>
       <div className={styles.columnDiv3}>
         <div className={styles.tableHeaderCell}>
@@ -75,25 +116,25 @@ const EmailsTable = ({ styles }) => {
             <div className={styles.textDiv1}>Date seen</div>
           </div>
         </div>
-        <div className={styles.tableCellDiv}>
-          <div className={styles.dateDiv}>2022-09-11 5:30AM</div>
-        </div>
-        <div className={styles.tableCellDiv}>
-          <div className={styles.dateDiv}>Null</div>
-        </div>
+        {emails.map(({ seen_at, id, seen }) => (
+          <div className={styles.tableCellDiv} key={id}>
+            <div className={styles.dateDiv}>
+              {seen
+                ? new Date(seen_at.split(".")[0]).toLocaleString()
+                : "Not seen"}
+            </div>
+          </div>
+        ))}
       </div>
       <div className={styles.dropdownDiv}>
         <div className={styles.tableHeaderCell8} />
-        <div className={styles.tableCellButton}>
-          <IconButton>
-            <Delete />
-          </IconButton>
-        </div>
-        <div className={styles.tableCellButton}>
-          <IconButton>
-            <Delete />
-          </IconButton>
-        </div>
+        {emails.map(({ id }) => (
+          <div className={styles.tableCellButton} key={id}>
+            <IconButton onClick={() => deleteEmail(id)}>
+              <Delete />
+            </IconButton>
+          </div>
+        ))}
       </div>
     </div>
   );
