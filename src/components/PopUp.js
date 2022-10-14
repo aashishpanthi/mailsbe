@@ -70,7 +70,6 @@ const PopUp = ({ setPopUp }) => {
               size="medium"
               margin="none"
               disabled
-              fullWidth
               helperText="Copy this text and paste it in the email."
             />
             <IconButton

@@ -58,13 +58,13 @@
 }
 
 .copyIcon {
-  position: absolute;
-  top: 40%;
+  position: absolute !important;
+  top: 10px;
   right: 10px;
-  transform: translateY(-60%);
   cursor: pointer;
 }
 
 .inputFilledTextField {
   width: 100%;
+  flex: 1;
 }
