@@ -9,6 +9,7 @@
     "@headlessui/react": "^1.7.3",
     "@heroicons/react": "^1.0.6",
     "@mui/icons-material": "^5.10.9",
+    "@mui/lab": "^5.0.0-alpha.103",
     "@mui/material": "^5.10.9",
     "@mui/styled-engine": "^5.10.8",
     "@nhost/react": "^0.13.0",

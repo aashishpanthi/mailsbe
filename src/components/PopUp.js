@@ -1,16 +1,51 @@
-import { TextField, Button, Typography, IconButton } from "@mui/material";
-import styles from "../styles/components/Popup.module.css";
+import {
+  TextField,
+  Typography,
+  IconButton,
+  FormHelperText,
+  FormControl,
+} from "@mui/material";
+import LoadingButton from "@mui/lab/LoadingButton";
 import SaveIcon from "@mui/icons-material/Save";
 import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 import toast from "react-hot-toast";
+import { useUserData } from "@nhost/react";
 
+import styles from "../styles/components/Popup.module.css";
 import { useState, useEffect } from "react";
+import { gql, useMutation } from "@apollo/client";
+import { useAuthenticated } from "@nhost/react";
+
+const ADD_EMAIL = gql`
+  mutation addEmail(
+    $email: String
+    $description: String
+    $img_text: String
+    $user: String
+  ) {
+    insert_emails(
+      objects: {
+        description: $description
+        email: $email
+        img_text: $img_text
+        user: $user
+      }
+    ) {
+      affected_rows
+    }
+  }
+`;
 
 const PopUp = ({ setPopUp }) => {
   const [email, setEmail] = useState("");
   const [description, setDescription] = useState("");
   const [imgText, setImgText] = useState("");
+
+  const [addEmail, { data, loading, error }] = useMutation(ADD_EMAIL);
+
+  //get the user id
+  const user = useUserData();
 
   const copyToClipboard = () => {
     try {
@@ -21,10 +56,23 @@ const PopUp = ({ setPopUp }) => {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    setPopUp(false);
+    try {
+      await addEmail({
+        variables: {
+          email: email,
+          description: description,
+          img_text: imgText,
+          user: user.id,
+        },
+      });
+      toast.success("Email added successfully");
+      setPopUp(false);
+    } catch (err) {
+      toast.error("Unable to add email");
+    }
   };
 
   useEffect(() => {
@@ -45,65 +93,73 @@ const PopUp = ({ setPopUp }) => {
           </IconButton>
         </div>
         <form className={styles.groupForm} onSubmit={handleSubmit}>
-          <TextField
-            className={styles.inputOutlinedTextField}
-            fullWidth
-            color="primary"
-            variant="outlined"
-            type="email"
-            label="Email"
-            placeholder="Receiver's email"
-            size="medium"
-            margin="none"
-            required
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <TextField
-            className={styles.textAreaOutlinedTextField}
-            color="primary"
-            variant="outlined"
-            multiline
-            label="Description"
-            placeholder="Some distinct description"
-            helperText="This text will help to seperate emails."
-            required
-            fullWidth
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-          />
-
-          <div className={styles.copyBox}>
+          <FormControl sx={{ m: 0, width: "100%" }} error={error}>
             <TextField
-              className={styles.inputFilledTextField}
+              className={styles.inputOutlinedTextField}
+              fullWidth
               color="primary"
-              variant="filled"
-              type="text"
-              label={imgText}
+              variant="outlined"
+              type="email"
+              label="Email"
+              placeholder="Receiver's email"
               size="medium"
               margin="none"
-              disabled
-              helperText="Copy this text and paste it in the email."
+              required
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
-            <IconButton
-              aria-label="copy"
-              className={styles.copyIcon}
-              onClick={copyToClipboard}
+            <TextField
+              className={styles.textAreaOutlinedTextField}
+              color="primary"
+              variant="outlined"
+              multiline
+              label="Description"
+              placeholder="Some distinct description"
+              helperText="This text will help to seperate emails."
+              required
+              fullWidth
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+            />
+
+            <div className={styles.copyBox}>
+              <TextField
+                className={styles.inputFilledTextField}
+                color="primary"
+                variant="filled"
+                type="text"
+                label={imgText}
+                size="medium"
+                margin="none"
+                disabled
+                helperText="Copy this text and paste it in the email."
+              />
+              <IconButton
+                aria-label="copy"
+                className={styles.copyIcon}
+                onClick={copyToClipboard}
+              >
+                <ContentCopyIcon />
+              </IconButton>
+            </div>
+
+            {error && (
+              <FormHelperText>{`Error occured! ${error.message}`}</FormHelperText>
+            )}
+
+            <LoadingButton
+              className={styles.buttonContainedText}
+              variant="contained"
+              color="primary"
+              endIcon={<SaveIcon />}
+              size="large"
+              fullWidth
+              type="submit"
+              loading={loading}
             >
-              <ContentCopyIcon />
-            </IconButton>
-          </div>
-          <Button
-            className={styles.buttonContainedText}
-            variant="contained"
-            color="primary"
-            endIcon={<SaveIcon />}
-            size="large"
-            fullWidth
-            type="submit"
-          >
-            Save
-          </Button>
+              Save
+            </LoadingButton>
+          </FormControl>
         </form>
       </div>
     </div>
