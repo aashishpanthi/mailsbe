@@ -13,7 +13,7 @@ const Sidebar = ({ styles, user, setPopUp }) => {
 
   const name = user?.metadata?.name ? user?.metadata?.name : user.displayName;
   const email = user.email;
-  console.log(user.avatarUrl);
+
   const image = user.avatarUrl.includes("gravatar.com")
     ? user.avatarUrl
     : `https://img.icons8.com/external-linector-lineal-linector/344/external-avatar-man-avatar-linector-lineal-linector-6.png`;

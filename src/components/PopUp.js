@@ -1,13 +1,16 @@
-import { TextField, Button, Typography, Box, IconButton } from "@mui/material";
+import { TextField, Button, Typography, IconButton } from "@mui/material";
 import styles from "../styles/components/Popup.module.css";
 import SaveIcon from "@mui/icons-material/Save";
 import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 import toast from "react-hot-toast";
 
+import { useState, useEffect } from "react";
+
 const PopUp = ({ setPopUp }) => {
-  const time = new Date().getTime();
-  const imgText = `https://mydomain.com/${time}`;
+  const [email, setEmail] = useState("");
+  const [description, setDescription] = useState("");
+  const [imgText, setImgText] = useState("");
 
   const copyToClipboard = () => {
     try {
@@ -20,8 +23,14 @@ const PopUp = ({ setPopUp }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     setPopUp(false);
   };
+
+  useEffect(() => {
+    const time = new Date().getTime();
+    setImgText(`https://mydomain.com/${time}`);
+  }, []);
 
   return (
     <div className={styles.popup}>
@@ -47,6 +56,8 @@ const PopUp = ({ setPopUp }) => {
             size="medium"
             margin="none"
             required
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
           <TextField
             className={styles.textAreaOutlinedTextField}
@@ -58,6 +69,8 @@ const PopUp = ({ setPopUp }) => {
             helperText="This text will help to seperate emails."
             required
             fullWidth
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
           />
 
           <div className={styles.copyBox}>

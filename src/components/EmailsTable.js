@@ -1,4 +1,4 @@
-import { Delete } from "@mui/icons-material";
+import { Delete, Diversity1Sharp } from "@mui/icons-material";
 import { IconButton } from "@mui/material";
 import React from "react";
 
@@ -84,16 +84,16 @@ const EmailsTable = ({ styles }) => {
       </div>
       <div className={styles.dropdownDiv}>
         <div className={styles.tableHeaderCell8} />
-        <button className={styles.tableCellButton}>
+        <div className={styles.tableCellButton}>
           <IconButton>
             <Delete />
           </IconButton>
-        </button>
-        <button className={styles.tableCellButton}>
+        </div>
+        <div className={styles.tableCellButton}>
           <IconButton>
             <Delete />
           </IconButton>
-        </button>
+        </div>
       </div>
     </div>
   );
