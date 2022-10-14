@@ -1,6 +1,6 @@
 import { Delete } from "@mui/icons-material";
 import { IconButton } from "@mui/material";
-import { gql, useQuery } from "@apollo/client";
+import { gql, useQuery, useMutation } from "@apollo/client";
 import { useUserData } from "@nhost/react";
 import { CircularProgress } from "@mui/material";
 import toast from "react-hot-toast";
@@ -20,6 +20,14 @@ const GET_EMAILS = gql`
   }
 `;
 
+const DELETE_EMAIL = gql`
+  mutation deleteEmail($id: Int) {
+    delete_emails(where: { id: { _eq: $id } }) {
+      affected_rows
+    }
+  }
+`;
+
 const EmailsTable = ({ styles }) => {
   const user = useUserData();
   const [emails, setEmails] = useState([]);
@@ -27,6 +35,9 @@ const EmailsTable = ({ styles }) => {
   const { loading, error, data } = useQuery(GET_EMAILS, {
     variables: { user: user.id },
   });
+
+  const [deleteTodo, { loading: deleting, error: deleteError }] =
+    useMutation(DELETE_EMAIL);
 
   useEffect(() => {
     if (data) {
@@ -38,10 +49,28 @@ const EmailsTable = ({ styles }) => {
     }
   }, [data]);
 
-  const deleteEmail = (id) => {
+  const deleteEmail = async (id) => {
     console.log(id);
 
-    toast.success("Email deleted successfully");
+    // ask for confirmation using dialog
+    const confirmation = window.confirm(
+      "Are you sure you want to delete this?"
+    );
+    if (!confirmation) {
+      return;
+    }
+
+    try {
+      await deleteTodo({
+        variables: {
+          id: id,
+        },
+      });
+
+      toast.success("Email deleted successfully");
+    } catch (err) {
+      toast.error("Unable to delete email");
+    }
   };
 
   if (loading) {
