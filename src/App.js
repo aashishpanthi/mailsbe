@@ -22,8 +22,8 @@ const App = () => {
       <NhostApolloProvider nhost={nhost}>
         <BrowserRouter>
           <Routes>
-            <Route path="sign-up" element={<SignUp />} />
-            <Route path="sign-in" element={<SignIn />} />
+            <Route path="sign-up" element={<SignUp nhost={nhost} />} />
+            <Route path="sign-in" element={<SignIn nhost={nhost} />} />
             <Route path="/" element={<Home />} />
 
             <Route path="/app" element={<ProtectedDashboard />}>

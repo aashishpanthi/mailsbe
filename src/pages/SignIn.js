@@ -5,7 +5,7 @@ import { useState } from "react";
 
 import styles from "../styles/pages/SignIn.module.css";
 
-const SignIn = () => {
+const SignIn = ({ nhost }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -21,6 +21,12 @@ const SignIn = () => {
   const handleOnSubmit = (e) => {
     e.preventDefault();
     signInEmailPassword(email, password);
+  };
+
+  const handleGoogleSignIn = () => {
+    nhost.auth.signIn({
+      provider: "google",
+    });
   };
 
   if (isSuccess) {
@@ -44,7 +50,7 @@ const SignIn = () => {
               FIll in the required details to start using your account, and
               enjoy mailsbe.
             </div>
-            <div className={styles.buttonDiv}>
+            <div className={styles.buttonDiv} onClick={handleGoogleSignIn}>
               <div className={styles.buttonPrimaryWithIconDiv}>
                 <div className={styles.frameDiv}>
                   <div className={styles.buttonNameDiv}>

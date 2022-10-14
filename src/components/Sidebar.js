@@ -11,6 +11,13 @@ const Sidebar = ({ styles, user }) => {
     navigate("/");
   }, [navigate]);
 
+  const name = user?.metadata?.name ? user?.metadata?.name : user.displayName;
+  const email = user.email;
+  console.log(user.avatarUrl);
+  const image = user.avatarUrl.includes("gravatar.com")
+    ? user.avatarUrl
+    : `https://img.icons8.com/external-linector-lineal-linector/344/external-avatar-man-avatar-linector-lineal-linector-6.png`;
+
   return (
     <div className={styles.sideBarDiv}>
       <Link className={styles.logoA} to="/">
@@ -42,14 +49,14 @@ const Sidebar = ({ styles, user }) => {
       <div className={styles.menuDiv}>
         <div className={styles.titleDiv}>Profile</div>
         <div className={styles.frameDiv2}>
-          <img className={styles.image1Icon} alt="" src={user.avatarUrl} />
+          <img
+            className={styles.image1Icon}
+            alt={name.substring(0, 1)}
+            src={image}
+          />
           <div className={styles.textAndSupportingText}>
-            <div className={styles.titleDiv}>
-              {user?.metadata?.name ? user?.metadata?.name : user.displayName}
-            </div>
-            <div className={styles.aashishpanthi11gmailcomDiv}>
-              {user.email}
-            </div>
+            <div className={styles.titleDiv}>{name}</div>
+            <div className={styles.aashishpanthi11gmailcomDiv}>{email}</div>
           </div>
         </div>
       </div>

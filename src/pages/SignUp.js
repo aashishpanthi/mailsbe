@@ -4,7 +4,7 @@ import { useSignUpEmailPassword } from "@nhost/react";
 import { useState } from "react";
 import Spinner from "../components/Spinner";
 
-const SignUp = () => {
+const SignUp = ({ nhost }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -29,6 +29,12 @@ const SignUp = () => {
     });
   };
 
+  const handleGoogleSignUp = () => {
+    nhost.auth.signIn({
+      provider: "google",
+    });
+  };
+
   if (isSuccess) {
     return <Navigate to="/" replace={true} />;
   }
@@ -50,7 +56,7 @@ const SignUp = () => {
               Create an account to start using mailsbe from today, completely
               free.
             </div>
-            <button className={styles.button}>
+            <button className={styles.button} onClick={handleGoogleSignUp}>
               <div className={styles.buttonPrimaryWithIconDiv}>
                 <div className={styles.frameDiv}>
                   <div className={styles.buttonNameDiv}>
