@@ -27,11 +27,15 @@ export default async (req, res) => {
     }`;
 
   try {
+    console.log(nhost);
+
     const { data } = await nhost.graphql.query(GET_EMAIL_ID, {
       variables: {
         text: imgText,
       },
     });
+
+    console.log(data);
 
     // extract the email id from the response
     const emailId = data.emails[0].id;
@@ -49,6 +53,7 @@ export default async (req, res) => {
       emailId,
     });
   } catch (error) {
+    console.log(error);
     res.status(500).json({ error });
   }
 };
