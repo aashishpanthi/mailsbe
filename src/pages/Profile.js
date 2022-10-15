@@ -44,6 +44,8 @@ const Profile = () => {
         },
       });
       toast.success("Updated successfully", { id: "updateProfile" });
+
+      window.location.reload();
     } catch (error) {
       toast.error("Unable to update profile", { id: "updateProfile" });
     }
