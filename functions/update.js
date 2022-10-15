@@ -46,11 +46,15 @@ export default async (req, res) => {
       text: imgText,
     });
 
+    console.log("data", data);
+
     if (error) {
+      console.log("Fetch error", error);
       return res.status(500).json({ error: error.message });
     }
 
     if (!data) {
+      console.log("no data");
       res.status(500).json({ error: "No email found" });
     }
 
@@ -58,10 +62,18 @@ export default async (req, res) => {
     const emailId = data.emails[0].id;
 
     //update the seen column in emails table
-    const { data: updatedData } = await nhost.graphql.request(UPDATE_QUERY, {
-      id: emailId,
-      date: new Date(),
-    });
+    const { data: updatedData, error: updateError } =
+      await nhost.graphql.request(UPDATE_QUERY, {
+        id: emailId,
+        date: new Date(),
+      });
+
+    if (updateError) {
+      console.log("Update error", error);
+      return res.status(500).json({ error: error.message });
+    }
+
+    console.log("updatedData", updatedData);
 
     // return the updated data
     res.status(200).send({
