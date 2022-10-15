@@ -42,34 +42,21 @@ export default async (req, res) => {
     }`;
 
   try {
-    const data = await nhost.graphql
+    await nhost.graphql
       .request(GET_EMAIL_ID, {
         text: imgText,
       })
-      .prmoise();
-
-    console.log("data", data);
-
-    if (!data) {
-      res.status(500).json({ error: "No email found" });
-    }
-
-    // extract the email id from the response
-    // const emailId = data.emails[0].id;
-
-    //update the seen column in emails table
-    // const { data: updatedData } = await nhost.graphql.request(UPDATE_QUERY, {
-    //   id: emailId,
-    //   date: new Date(),
-    // });
-
-    // return the updated data
-    res.status(200).send({
-      imgText,
-      data,
-      // emailId,
-      // updatedData,
-    });
+      .then((data) =>
+        nhost.graphql
+          .request(UPDATE_QUERY, {
+            id: data.emails[0].id,
+            date: new Date().toISOString(),
+          })
+          .then((data) => {
+            console.log("data", data);
+            res.status(200).json({ message: "Email updated" });
+          })
+      );
   } catch (error) {
     console.log(error);
     res.status(500).json({ error });
