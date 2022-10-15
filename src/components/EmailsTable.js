@@ -144,7 +144,7 @@ const EmailsTable = ({ styles }) => {
         {emails.map(({ created_at, id }) => (
           <div className={styles.tableCellDiv} key={id}>
             <div className={styles.dateDiv}>
-              {new Date(created_at.split(".")[0]).toLocaleString()}
+              {new Date(created_at).toLocaleString()}
             </div>
           </div>
         ))}
@@ -158,9 +158,7 @@ const EmailsTable = ({ styles }) => {
         {emails.map(({ seen_at, id, seen }) => (
           <div className={styles.tableCellDiv} key={id}>
             <div className={styles.dateDiv}>
-              {seen
-                ? new Date(seen_at.split(".")[0]).toLocaleString()
-                : "Not seen"}
+              {seen ? new Date(seen_at).toLocaleString() : "Not seen"}
             </div>
           </div>
         ))}
