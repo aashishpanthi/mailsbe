@@ -8,12 +8,11 @@ import {
 import LoadingButton from "@mui/lab/LoadingButton";
 import SaveIcon from "@mui/icons-material/Save";
 import HighlightOffIcon from "@mui/icons-material/HighlightOff";
-import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 import toast from "react-hot-toast";
 import { useUserData } from "@nhost/react";
 
 import styles from "../styles/components/Popup.module.css";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { gql, useMutation } from "@apollo/client";
 
 const ADD_EMAIL = gql`
@@ -37,23 +36,17 @@ const ADD_EMAIL = gql`
 `;
 
 const PopUp = ({ setPopUp }) => {
+  //get the user data
+  const user = useUserData();
+
   const [email, setEmail] = useState("");
   const [description, setDescription] = useState("");
+  const [name, setName] = useState(user.displayName);
   const [imgText, setImgText] = useState("");
 
   const [addEmail, { data, loading, error }] = useMutation(ADD_EMAIL);
 
-  //get the user id
-  const user = useUserData();
-
-  const copyToClipboard = () => {
-    try {
-      navigator.clipboard.writeText(imgText);
-      toast.success("Copied to clipboard");
-    } catch (err) {
-      toast.error("Unable to copy to clipboard");
-    }
-  };
+  const ref = useRef();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -124,25 +117,33 @@ const PopUp = ({ setPopUp }) => {
               onChange={(e) => setDescription(e.target.value)}
             />
 
+            <TextField
+              color="primary"
+              variant="outlined"
+              label="Your Name"
+              placeholder="Enter your full name"
+              helperText="An image will be attached with this text."
+              required
+              fullWidth
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+
             <div className={styles.copyBox}>
-              <TextField
-                className={styles.inputFilledTextField}
-                color="primary"
-                variant="filled"
-                type="text"
-                label={imgText}
-                size="medium"
-                margin="none"
-                disabled
-                helperText="Copy this text and paste it in the email."
-              />
-              <IconButton
-                aria-label="copy"
-                className={styles.copyIcon}
-                onClick={copyToClipboard}
-              >
-                <ContentCopyIcon />
-              </IconButton>
+              <div className={styles.imgDiv} ref={ref}>
+                {name && name.substring(0, 1)}
+                <img
+                  src={imgText}
+                  className={styles.pixelImg}
+                  width={1}
+                  height={1}
+                />
+                {name && name.substring(1, name.length)}
+              </div>
+              <span className={styles.imgHelperText}>
+                Copy this text and paste it in the email.{" "}
+                <strong>Imp: Don't erase it after pasting.</strong>
+              </span>
             </div>
 
             {error && (
