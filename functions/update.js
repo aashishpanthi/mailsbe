@@ -7,6 +7,8 @@ const nhost = new NhostClient({
   backendUrl: backendUrl,
 });
 
+console.log(nhost.graphql.getUrl());
+
 // nhost.graphql.setAccessToken(accessToken);
 
 console.log({
@@ -40,7 +42,7 @@ export default async (req, res) => {
     }`;
 
   try {
-    const { data } = await nhost.graphql.query(GET_EMAIL_ID, {
+    const { data } = await nhost.graphql.request(GET_EMAIL_ID, {
       variables: {
         text: imgText,
       },
