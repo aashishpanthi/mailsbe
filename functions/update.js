@@ -27,7 +27,7 @@ export default async (req, res) => {
 
   // make a get query to get email id using imgText
   const GET_EMAIL_ID = `
-  query getId($text: String) {
+  query getId($text: String!) {
     emails(where: {img_text: {_eq: $text}}) {
       id
     }
@@ -35,7 +35,7 @@ export default async (req, res) => {
 
   // update query with the email id
   const UPDATE_QUERY = `
-    mutation UpdateEmail($id: Int, $date: timestamptz) {
+    mutation UpdateEmail($id: Int!, $date: timestamptz!) {
       update_emails(where: {id: {_eq: $id}}, _set: {seen: true, seen_at: $date}) {
         affected_rows
       }
@@ -48,7 +48,9 @@ export default async (req, res) => {
       },
     });
 
-    console.log(data);
+    if (!data) {
+      res.status(500).json({ error: "No email found" });
+    }
 
     // extract the email id from the response
     const emailId = data.emails[0].id;
