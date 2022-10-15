@@ -23,6 +23,7 @@ export default async (req, res) => {
   query getId($text: String!) {
     emails(where: {img_text: {_eq: $text}}) {
       id
+      seen
     }
   }`;
 
@@ -49,6 +50,11 @@ export default async (req, res) => {
 
     // extract the email id from the response
     const emailId = data.emails[0].id;
+    const seen = data.emails[0].seen;
+
+    if (seen) {
+      return res.status(500).json({ error: "Kaam hogaya vai" });
+    }
 
     //update the seen column in emails table
     const { data: updatedData, error: updateError } =
