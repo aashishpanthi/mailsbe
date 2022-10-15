@@ -2,8 +2,6 @@ import { NhostClient } from "@nhost/nhost-js";
 
 const nhost = new NhostClient({
   backendUrl: process.env.NHOST_BACKEND_URL,
-  subdomain: process.env.REACT_APP_NHOST_SUBDOMAIN,
-  region: process.env.REACT_APP_NHOST_REGION,
 });
 
 nhost.graphql.setAccessToken(process.env.NHOST_ADMIN_SECRET);
