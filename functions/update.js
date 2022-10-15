@@ -7,14 +7,7 @@ const nhost = new NhostClient({
   backendUrl: backendUrl,
 });
 
-console.log(nhost.graphql.getUrl());
-
 nhost.graphql.setAccessToken(accessToken);
-
-console.log({
-  accessToken,
-  backendUrl,
-});
 
 export default async (req, res) => {
   // get the data from the request
@@ -46,16 +39,12 @@ export default async (req, res) => {
       text: imgText,
     });
 
-    console.log("data", data);
-
     if (error) {
-      console.log("Fetch error", error);
       return res.status(500).json({ error: error.message });
     }
 
     if (!data) {
-      console.log("no data");
-      res.status(500).json({ error: "No email found" });
+      return res.status(500).json({ error: "No email found" });
     }
 
     // extract the email id from the response
@@ -69,19 +58,10 @@ export default async (req, res) => {
       });
 
     if (updateError) {
-      console.log("Update error", error);
       return res.status(500).json({ error: error.message });
     }
 
-    console.log("updatedData", updatedData);
-
-    // return the updated data
-    res.status(200).send({
-      imgText,
-      data,
-      emailId,
-      updatedData,
-    });
+    res.status(404).send({ error: "Bye bye" });
   } catch (error) {
     console.log(error);
     res.status(500).json({ error });

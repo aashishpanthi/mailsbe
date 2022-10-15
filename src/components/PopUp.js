@@ -63,7 +63,7 @@ const PopUp = ({ setPopUp }) => {
         variables: {
           email: email,
           description: description,
-          img_text: imgText,
+          img_text: imgText.split("=")[1],
           user: user.id,
         },
       });
@@ -77,7 +77,9 @@ const PopUp = ({ setPopUp }) => {
 
   useEffect(() => {
     const time = new Date().getTime();
-    setImgText(`https://mydomain.com/${time}`);
+    setImgText(
+      `https://tkjfsvqlulofoefmacvj.nhost.run/v1/functions/update?text=${time}`
+    );
   }, []);
 
   return (
