@@ -5,6 +5,7 @@ import Footer from "../components/Footer";
 import { useAuthenticationStatus } from "@nhost/react";
 import Spinner from "../components/Spinner";
 import { Navigate, useLocation } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const Home = () => {
   const { isAuthenticated, isLoading } = useAuthenticationStatus();
@@ -23,19 +24,25 @@ const Home = () => {
   }
 
   return (
-    <div className={styles.homeDiv}>
-      <Hero styles={styles} />
-      <nav className={styles.videoNav} id="video-container">
-        <iframe
-          className={styles.bGIframe}
-          src="https://www.youtube.com/embed/spfi8hGXjrA?rel=0"
-          frameBorder="0"
-          allowFullScreen
-        />
-      </nav>
-      <Features styles={styles} />
-      <Footer styles={styles} />
-    </div>
+    <>
+      <Helmet>
+        <title>Mailsbe - Track your emails</title>
+      </Helmet>
+
+      <div className={styles.homeDiv}>
+        <Hero styles={styles} />
+        <nav className={styles.videoNav} id="video-container">
+          <iframe
+            className={styles.bGIframe}
+            src="https://www.youtube.com/embed/spfi8hGXjrA?rel=0"
+            frameBorder="0"
+            allowFullScreen
+          />
+        </nav>
+        <Features styles={styles} />
+        <Footer styles={styles} />
+      </div>
+    </>
   );
 };
 
