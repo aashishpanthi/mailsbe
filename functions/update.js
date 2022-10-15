@@ -1,14 +1,27 @@
 import { NhostClient } from "@nhost/nhost-js";
 
+const accessToken = process.env.NHOST_ADMIN_SECRET;
+const backendUrl = process.env.NHOST_BACKEND_URL;
+
 const nhost = new NhostClient({
-  backendUrl: process.env.NHOST_BACKEND_URL,
+  backendUrl: backendUrl,
 });
 
-nhost.graphql.setAccessToken(process.env.NHOST_ADMIN_SECRET);
+// nhost.graphql.setAccessToken(accessToken);
+
+console.log({
+  accessToken,
+  backendUrl,
+});
 
 export default async (req, res) => {
   // get the data from the request
-  const imgText = req.query.text || "";
+  const imgText = req.query.text;
+  console.log("imgText", imgText);
+
+  if (!imgText) {
+    res.status(500).json({ error: "No image token provided" });
+  }
 
   // make a get query to get email id using imgText
   const GET_EMAIL_ID = `
@@ -27,8 +40,6 @@ export default async (req, res) => {
     }`;
 
   try {
-    console.log(nhost);
-
     const { data } = await nhost.graphql.query(GET_EMAIL_ID, {
       variables: {
         text: imgText,
@@ -40,17 +51,18 @@ export default async (req, res) => {
     // extract the email id from the response
     const emailId = data.emails[0].id;
 
-    // //update the seen column in emails table
-    // const { data: updatedData } = await nhost.graphql.request(UPDATE_QUERY, {
-    //   id: emailId,
-    //   date: new Date().toString(),
-    // });
+    //update the seen column in emails table
+    const { data: updatedData } = await nhost.graphql.request(UPDATE_QUERY, {
+      id: emailId,
+      date: new Date(),
+    });
 
     // return the updated data
     res.status(200).send({
       imgText,
       data,
       emailId,
+      updatedData,
     });
   } catch (error) {
     console.log(error);
