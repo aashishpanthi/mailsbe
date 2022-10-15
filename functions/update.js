@@ -4,7 +4,7 @@ const nhost = new NhostClient({
   backendUrl: process.env.NHOST_BACKEND_URL,
 });
 
-nhost.functions.setAccessToken(process.env.NHOST_ADMIN_SECRET);
+nhost.graphql.setAccessToken(process.env.NHOST_ADMIN_SECRET);
 
 export default async (req, res) => {
   // get the data from the request
@@ -25,6 +25,9 @@ export default async (req, res) => {
     res.status(500).json({ error });
   }
 
+  // extract the email id from the response
+  const emailId = data.emails[0].id;
+
   // update query using the email id
   const UPDATE_QUERY = `
   mutation UpdateEmail($id: Int, $date: timestamptz) {
@@ -34,10 +37,22 @@ export default async (req, res) => {
   }`;
 
   //update the seen column in emails table
+  const { data: updatedData, error: updateError } = await nhost.graphql.request(
+    UPDATE_QUERY,
+    {
+      id: emailId,
+      date: new Date(),
+    }
+  );
+
+  if (error) {
+    res.status(500).json({ error: updateError });
+  }
 
   // return the updated data
   res.status(200).send({
     imgText,
     data,
+    updatedData,
   });
 };
