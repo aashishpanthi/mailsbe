@@ -38,17 +38,17 @@ export default async (req, res) => {
     // extract the email id from the response
     const emailId = data.emails[0].id;
 
-    //update the seen column in emails table
-    const { data: updatedData } = await nhost.graphql.request(UPDATE_QUERY, {
-      id: emailId,
-      date: new Date().toString(),
-    });
+    // //update the seen column in emails table
+    // const { data: updatedData } = await nhost.graphql.request(UPDATE_QUERY, {
+    //   id: emailId,
+    //   date: new Date().toString(),
+    // });
 
     // return the updated data
     res.status(200).send({
       imgText,
       data,
-      updatedData,
+      emailId,
     });
   } catch (error) {
     res.status(500).json({ error });
