@@ -2,6 +2,8 @@ import { NhostClient } from "@nhost/nhost-js";
 
 const nhost = new NhostClient({
   backendUrl: process.env.NHOST_BACKEND_URL,
+  subdomain: process.env.REACT_APP_NHOST_SUBDOMAIN,
+  region: process.env.REACT_APP_NHOST_REGION,
 });
 
 nhost.graphql.setAccessToken(process.env.NHOST_ADMIN_SECRET);
@@ -19,7 +21,9 @@ export default async (req, res) => {
   }`;
 
   // get the email id from the request
-  const { data, error } = await nhost.graphql.request(GET_EMAIL_ID);
+  const { data, error } = await nhost.graphql.request(GET_EMAIL_ID, {
+    text: imgText,
+  });
 
   if (error) {
     res.status(500).json({ error });
