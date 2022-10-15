@@ -19,7 +19,7 @@ export default async (req, res) => {
   }`;
 
   // get the email id from the request
-  const { data, error } = await nhost.graphql.request(CUSTOMERS);
+  const { data, error } = await nhost.graphql.request(GET_EMAIL_ID);
 
   if (error) {
     res.status(500).json({ error });
