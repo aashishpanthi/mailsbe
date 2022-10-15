@@ -42,13 +42,9 @@ export default async (req, res) => {
     }`;
 
   try {
-    const data = await nhost.graphql.request(GET_EMAIL_ID, {
-      variables: {
-        text: imgText,
-      },
+    const { data } = await nhost.graphql.request(GET_EMAIL_ID, {
+      text: imgText,
     });
-
-    console.log("data", data);
 
     if (!data) {
       res.status(500).json({ error: "No email found" });
