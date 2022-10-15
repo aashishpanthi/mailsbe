@@ -9,7 +9,7 @@ const nhost = new NhostClient({
 
 console.log(nhost.graphql.getUrl());
 
-// nhost.graphql.setAccessToken(accessToken);
+nhost.graphql.setAccessToken(accessToken);
 
 console.log({
   accessToken,
