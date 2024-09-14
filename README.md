@@ -24,3 +24,5 @@ First of all, you need to create an account. Then only you can access your dashb
 No, you can't send emails from here. Instead, you will be provided an image (1x1 transparent pixel) which you can copy and paste to the email client from where you are sending the email. Then fill out some more information about the email (it will make it easy to find the email in the future) and click save.
 
 After you sent your email, you can now access the status of the email on the dashboard. The status is either _seen_ or _unseen_. The status will be updated when the receiver opens up the email you sent. And the serverless function helps to do that by accepting the receiver's request and updating it on the database.
+
+> This detailed guide will help you: https://blog.aashish-panthi.com.np/make-an-email-tracker-using-nhost-serverless-functions
